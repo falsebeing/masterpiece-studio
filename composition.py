@@ -1,6 +1,5 @@
 import durationsre
 import pitchesre
-import composer
 
 
 
