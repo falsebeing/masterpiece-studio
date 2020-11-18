@@ -1,0 +1,1451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1600</width>
+    <height>900</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:rgb(16, 24, 24);
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="archive">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1600</width>
+      <height>900</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <widget class="QFrame" name="studio">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1600</width>
+      <height>900</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="corner_logo">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>100</width>
+       <height>100</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>data/images/avante-note.png</pixmap>
+     </property>
+    </widget>
+    <widget class="QWidget" name="horizontalLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>390</y>
+       <width>191</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="key_sig_box">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="keysig_label">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(137, 137, 206);</string>
+        </property>
+        <property name="text">
+         <string>Key Signature:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+        </property>
+        <property name="margin">
+         <number>6</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="keysig_spacer1">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>168</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QComboBox" name="keysig_note">
+        <property name="minimumSize">
+         <size>
+          <width>46</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>42</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>20</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+	border: 1px solid rgb(16, 24, 24);
+	background-color: rgb(16, 24, 24);
+	color: rgb(137, 137, 206);
+}
+
+QComboBox:hover {
+	background-color: rgb(24, 40, 40);
+}
+</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>A</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>B</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>C</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>D</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>E</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>F</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>G</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="keysig_acc">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>26</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>16</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+
+	border: 1px solid rgb(16, 24, 24);
+	background-color: rgb(16, 24, 24);
+	color: rgb(137, 137, 206);
+
+}
+
+QPushButton:hover {
+	background-color: rgb(24, 40, 40);
+}
+
+QPushButton:focus {
+	border: rgb(85, 170, 255);
+	background-color: rgb(24, 40, 40);
+}
+</string>
+        </property>
+        <property name="text">
+         <string>#</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="verticalLayoutWidget_3">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>530</y>
+       <width>511</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="lh_range1_box">
+      <item>
+       <layout class="QHBoxLayout" name="lh_range1_note_display">
+        <item>
+         <widget class="QLabel" name="lh_range1_label">
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+	color:rgb(137, 137, 206)
+	
+}</string>
+          </property>
+          <property name="text">
+           <string>Note</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="lh_range1_spacerr">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QSlider" name="lr_range1_slider">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QSlider {
+	
+	color: rgb(255, 255, 255);
+	border-color: rgb(255, 85, 255);
+	selection-background-color: rgb(11, 17, 17);
+}</string>
+        </property>
+        <property name="maximum">
+         <number>87</number>
+        </property>
+        <property name="pageStep">
+         <number>1</number>
+        </property>
+        <property name="value">
+         <number>2</number>
+        </property>
+        <property name="tracking">
+         <bool>true</bool>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="invertedAppearance">
+         <bool>false</bool>
+        </property>
+        <property name="tickPosition">
+         <enum>QSlider::NoTicks</enum>
+        </property>
+        <property name="tickInterval">
+         <number>0</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="horizontalLayoutWidget_3">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>290</y>
+       <width>171</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="time_sig_box">
+      <item>
+       <widget class="QLabel" name="time_sig_label">
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(137, 137, 206);</string>
+        </property>
+        <property name="text">
+         <string>Time Signature:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+        </property>
+        <property name="margin">
+         <number>6</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>168</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="time_sig">
+        <item>
+         <widget class="QLineEdit" name="timesig_num">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>11</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+	color: rgb(137, 137, 206);
+	border-radius: 4px
+}
+
+QLineEdit:hover {
+	background-color: rgb(24, 40, 40);
+}</string>
+          </property>
+          <property name="inputMask">
+           <string>00</string>
+          </property>
+          <property name="text">
+           <string>4</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="placeholderText">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="Line" name="timesig_line">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>10</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+          <property name="lineWidth">
+           <number>4</number>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="timesig_den">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>11</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+	color: rgb(137, 137, 206);
+	border-radius: 4px
+}
+
+QLineEdit:hover {
+	background-color: rgb(24, 40, 40);
+}</string>
+          </property>
+          <property name="inputMask">
+           <string>00</string>
+          </property>
+          <property name="text">
+           <string>4</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="placeholderText">
+           <string/>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QLabel" name="lh_range_label">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>490</y>
+       <width>111</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+	color:rgb(137, 137, 206)
+	
+}</string>
+     </property>
+     <property name="text">
+      <string>Left Hand Range:</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="verticalLayoutWidget_4">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>580</y>
+       <width>511</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="lh_range2_box">
+      <item>
+       <layout class="QHBoxLayout" name="lh_range2_display">
+        <item>
+         <widget class="QLabel" name="lh_range2_label">
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+	color:rgb(137, 137, 206)
+	
+}</string>
+          </property>
+          <property name="text">
+           <string>Note</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="lh_range2_spacerr">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QSlider" name="lh_range2_slider">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QSlider {
+	
+	color: rgb(255, 255, 255);
+	border-color: rgb(255, 85, 255);
+	selection-background-color: rgb(11, 17, 17);
+}</string>
+        </property>
+        <property name="maximum">
+         <number>87</number>
+        </property>
+        <property name="pageStep">
+         <number>1</number>
+        </property>
+        <property name="value">
+         <number>2</number>
+        </property>
+        <property name="tracking">
+         <bool>true</bool>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="invertedAppearance">
+         <bool>false</bool>
+        </property>
+        <property name="tickPosition">
+         <enum>QSlider::NoTicks</enum>
+        </property>
+        <property name="tickInterval">
+         <number>0</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QLabel" name="lh_range1_header_label">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>490</y>
+       <width>29</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+	color:rgb(137, 137, 206)
+	
+}</string>
+     </property>
+     <property name="text">
+      <string>Note</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lh_range2_header_label">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>490</y>
+       <width>29</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+	color:rgb(137, 137, 206)
+	
+}</string>
+     </property>
+     <property name="text">
+      <string>Note</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="dash">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>490</y>
+       <width>16</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+	color:rgb(137, 137, 206)
+	
+}</string>
+     </property>
+     <property name="text">
+      <string>-</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>910</x>
+       <y>590</y>
+       <width>400</width>
+       <height>40</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>40</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>400</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	border: 2px solid rgb(67, 67, 100);
+	border-radius: 10px;
+	color: rgb(137, 137, 206);
+	padding-left: 10px;
+	padding-right: 10px;
+	
+	background-color: rgb(25, 40, 40);
+}
+
+QPushButton:hover {
+	border: 2px solid rgb(36, 36, 54);
+}
+
+QPushButton:focus {
+	border: rgb(85, 170, 255);
+	background-color: rgb(24, 40, 40);
+}
+
+</string>
+     </property>
+     <property name="text">
+      <string>Compose</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>156</y>
+       <width>293</width>
+       <height>44</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>240</width>
+       <height>44</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>Rasa</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit {
+	border: 2px solid rgb(67, 67, 100);
+	border-radius: 10px;
+	color: rgb(137, 137, 206);
+	padding-left: 10px;
+	padding-right: 10px;
+	
+	background-color: rgb(25, 40, 40);
+}
+
+QLineEdit:hover {
+	border: 2px solid rgb(36, 36, 54);
+}
+
+QLineEdit:focus {
+	border: rgb(85, 170, 255);
+	background-color: rgb(24, 40, 40);
+}
+
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="cursorPosition">
+      <number>0</number>
+     </property>
+     <property name="placeholderText">
+      <string>Name a new piece</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="output_folder_entry">
+     <property name="geometry">
+      <rect>
+       <x>1060</x>
+       <y>160</y>
+       <width>281</width>
+       <height>40</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>240</width>
+       <height>40</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>Rasa</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit {
+	border: 2px solid rgb(67, 67, 100);
+	border-radius: 10px;
+	color: rgb(137, 137, 206);
+	padding-left: 10px;
+	padding-right: 10px;
+	
+	background-color: rgb(25, 40, 40);
+}
+
+QLineEdit:hover {
+	border: 2px solid rgb(36, 36, 54);
+}
+
+QLineEdit:focus {
+	border: rgb(85, 170, 255);
+	background-color: rgb(24, 40, 40);
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="cursorPosition">
+      <number>0</number>
+     </property>
+     <property name="placeholderText">
+      <string>/output/</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="time_sig_label_8">
+     <property name="geometry">
+      <rect>
+       <x>1060</x>
+       <y>120</y>
+       <width>131</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(137, 137, 206);</string>
+     </property>
+     <property name="text">
+      <string>Additional Filepath</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="margin">
+      <number>6</number>
+     </property>
+    </widget>
+    <widget class="QLabel" name="prompt">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>60</y>
+       <width>171</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(137, 137, 206);</string>
+     </property>
+     <property name="text">
+      <string>Professor Whitefur can do many things, just tell him what you need:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+     <property name="margin">
+      <number>6</number>
+     </property>
+    </widget>
+    <widget class="QLabel" name="prompt_2">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>0</y>
+       <width>261</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>28</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(137, 137, 206);</string>
+     </property>
+     <property name="text">
+      <string>The Studio</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+     <property name="margin">
+      <number>6</number>
+     </property>
+    </widget>
+    <widget class="Line" name="timesig_line_2">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>48</y>
+       <width>291</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>10</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="lineWidth">
+      <number>4</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QWidget" name="horizontalLayoutWidget_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>240</y>
+       <width>221</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QLabel" name="length_label">
+        <property name="minimumSize">
+         <size>
+          <width>140</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>120</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(137, 137, 206);</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Length in measures:&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+        <property name="margin">
+         <number>6</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="timesig_num_2">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+	color: rgb(137, 137, 206);
+	border-radius: 4px
+}
+
+QLineEdit:hover {
+	background-color: rgb(24, 40, 40);
+}</string>
+        </property>
+        <property name="inputMask">
+         <string>000</string>
+        </property>
+        <property name="text">
+         <string>16</string>
+        </property>
+        <property name="maxLength">
+         <number>3</number>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="placeholderText">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QTreeView" name="output_tree">
+     <property name="geometry">
+      <rect>
+       <x>910</x>
+       <y>230</y>
+       <width>431</width>
+       <height>281</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QTreeView {
+	color: rgb(137, 137, 206);
+	background-color: rgb(25, 40, 40);
+}</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lh_range_label_2">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>670</y>
+       <width>121</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+	color:rgb(137, 137, 206)
+	
+}</string>
+     </property>
+     <property name="text">
+      <string>Right Hand Range:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lh_range2_header_label_2">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>670</y>
+       <width>29</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+	color:rgb(137, 137, 206)
+	
+}</string>
+     </property>
+     <property name="text">
+      <string>Note</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lh_range1_header_label_2">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>670</y>
+       <width>29</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+	color:rgb(137, 137, 206)
+	
+}</string>
+     </property>
+     <property name="text">
+      <string>Note</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="verticalLayoutWidget_6">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>750</y>
+       <width>511</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="rh_range2_box">
+      <item>
+       <layout class="QHBoxLayout" name="rh_range2_display">
+        <item>
+         <widget class="QLabel" name="rh_range2_label">
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+	color:rgb(137, 137, 206)
+	
+}</string>
+          </property>
+          <property name="text">
+           <string>Note</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="rh_range2_spacerr">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QSlider" name="rh_range2_slider">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QSlider {
+	
+	color: rgb(255, 255, 255);
+	border-color: rgb(255, 85, 255);
+	selection-background-color: rgb(11, 17, 17);
+}</string>
+        </property>
+        <property name="maximum">
+         <number>87</number>
+        </property>
+        <property name="pageStep">
+         <number>1</number>
+        </property>
+        <property name="value">
+         <number>2</number>
+        </property>
+        <property name="tracking">
+         <bool>true</bool>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="invertedAppearance">
+         <bool>false</bool>
+        </property>
+        <property name="tickPosition">
+         <enum>QSlider::NoTicks</enum>
+        </property>
+        <property name="tickInterval">
+         <number>0</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="verticalLayoutWidget_7">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>700</y>
+       <width>511</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="rh_range1_box">
+      <item>
+       <layout class="QHBoxLayout" name="rh_range1_note_display">
+        <item>
+         <widget class="QLabel" name="rh_range1_label">
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+	color:rgb(137, 137, 206)
+	
+}</string>
+          </property>
+          <property name="text">
+           <string>Note</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="rh_range1_spacerr">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QSlider" name="rh_range1_slider">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QSlider {
+	
+	color: rgb(255, 255, 255);
+	border-color: rgb(255, 85, 255);
+	selection-background-color: rgb(11, 17, 17);
+}</string>
+        </property>
+        <property name="maximum">
+         <number>87</number>
+        </property>
+        <property name="pageStep">
+         <number>1</number>
+        </property>
+        <property name="value">
+         <number>2</number>
+        </property>
+        <property name="tracking">
+         <bool>true</bool>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="invertedAppearance">
+         <bool>false</bool>
+        </property>
+        <property name="tickPosition">
+         <enum>QSlider::NoTicks</enum>
+        </property>
+        <property name="tickInterval">
+         <number>0</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QLabel" name="dash_2">
+     <property name="geometry">
+      <rect>
+       <x>290</x>
+       <y>670</y>
+       <width>16</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+	color:rgb(137, 137, 206)
+	
+}</string>
+     </property>
+     <property name="text">
+      <string>-</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="length_label_2">
+     <property name="geometry">
+      <rect>
+       <x>900</x>
+       <y>200</y>
+       <width>71</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>60</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>120</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(137, 137, 206);</string>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;/output/&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+     <property name="margin">
+      <number>6</number>
+     </property>
+    </widget>
+    <zorder>corner_logo</zorder>
+    <zorder>horizontalLayoutWidget</zorder>
+    <zorder>verticalLayoutWidget_3</zorder>
+    <zorder>horizontalLayoutWidget_3</zorder>
+    <zorder>lh_range_label</zorder>
+    <zorder>verticalLayoutWidget_4</zorder>
+    <zorder>lh_range1_header_label</zorder>
+    <zorder>dash</zorder>
+    <zorder>lh_range2_header_label</zorder>
+    <zorder>pushButton</zorder>
+    <zorder>lineEdit</zorder>
+    <zorder>output_folder_entry</zorder>
+    <zorder>time_sig_label_8</zorder>
+    <zorder>prompt</zorder>
+    <zorder>prompt_2</zorder>
+    <zorder>timesig_line_2</zorder>
+    <zorder>horizontalLayoutWidget_2</zorder>
+    <zorder>output_tree</zorder>
+    <zorder>lh_range_label_2</zorder>
+    <zorder>lh_range2_header_label_2</zorder>
+    <zorder>lh_range1_header_label_2</zorder>
+    <zorder>verticalLayoutWidget_6</zorder>
+    <zorder>verticalLayoutWidget_7</zorder>
+    <zorder>dash_2</zorder>
+    <zorder>length_label_2</zorder>
+   </widget>
+   <widget class="QFrame" name="meet_the_composer">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1600</width>
+      <height>900</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="whitefur_photo">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>100</y>
+       <width>1000</width>
+       <height>800</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>data/composer.png</pixmap>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>1080</x>
+       <y>140</y>
+       <width>401</width>
+       <height>401</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame {
+	color: rgb(137, 137, 206);
+}</string>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Composer and professor Arthur &amp;quot;Skip&amp;quot; Whitefur has been composing masterpieces since his owner died in his sleep three days ago, and has quickly ascended the pinnacle of the art with now universally-acclaimed works such as &lt;span style=&quot; font-style:italic;&quot;&gt;Crispy Does It &lt;/span&gt;and &lt;span style=&quot; font-style:italic;&quot;&gt;When I Shed&lt;/span&gt;.&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Dr. Whitefur does not read his email, but you can usually find him working at the forge of his craft or in the bedroom sustaining himself on more of his owner's remains. And now let's finish with a few words from Dr Skip himself:&lt;br/&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;&amp;quot;I hate other cats. They think they can eat my food, so I hiss and swat at them every time. I'll cut any of them who comes near my food&amp;quot;&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;- Professor Arthur &amp;quot;Skip&amp;quot; Whitefur&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <zorder>archive</zorder>
+   <zorder>meet_the_composer</zorder>
+   <zorder>studio</zorder>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

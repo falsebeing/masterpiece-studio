@@ -2,7 +2,6 @@ import durationsre
 import pitchesre
 
 
-
 test_rhythm = durationsre.Rhythm(12, (4,4))
 
 
