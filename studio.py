@@ -1,9 +1,11 @@
-from PySide2.QtWidgets import QMainWindow, QApplication, QButtonGroup
+from PySide2.QtWidgets import QMainWindow, QApplication, QButtonGroup, QFileSystemModel
+from PySide2.QtCore import QDir
 from studio_ui import Ui_MainWindow
 
 from custom_logging import *
 from composition import *
 import sys
+import os
 
 import time
 
@@ -26,10 +28,10 @@ class Studio(QMainWindow):
 		self.frames = [self.ui.studio, self.ui.meet_the_composer]
 		self.active_frame = self.ui.studio
 
-
 	def init_ui(self):
 
 		self.ui.keyboard_cat.hide()
+		self.keyboard_cat = False
 
 		self.ui.ranges_group = QButtonGroup()
 		self.ui.ranges_group.addButton(self.ui.sharp_ranges)
@@ -43,6 +45,9 @@ class Studio(QMainWindow):
 		# _update functions are always called in response to user input updates
 		# to modify class attributes and refresh other parts of the display if needed
 		# some _updates use other functions to handle the attribute change
+
+		self.ui.cats.stateChanged.connect(self._update_cats)
+
 		self.ui.corner_logo.clicked.connect(self.swap_frames)
 		self.ui.corner_logo_2.clicked.connect(self.swap_frames)
 
@@ -62,6 +67,8 @@ class Studio(QMainWindow):
 		self.ui.lh_range2_slider.valueChanged.connect(self._update_lh_range2)
 		self.ui.rh_range1_slider.valueChanged.connect(self._update_rh_range1)
 		self.ui.rh_range2_slider.valueChanged.connect(self._update_rh_range2)
+
+		self.ui.output_tree.setModel(self.output_model)
 
 		self.ui.extended_filepath.textEdited.connect(self._update_extended_filepath)
 		self.ui.pdf.stateChanged.connect(self._update_pdf)
@@ -86,6 +93,10 @@ class Studio(QMainWindow):
 		self.rh_range2 = self.ui.rh_range2_slider.value()
 		self.lh_range2 = self.ui.lh_range2_slider.value()
 
+		self.output_model = QFileSystemModel()
+		output_path = os.getcwd()+"/output"
+		self.output_model.setRootPath(output_path)
+
 		self._update_measures()
 		self._update_timesig()
 		self._update_keysig_note()
@@ -101,18 +112,26 @@ class Studio(QMainWindow):
 	def compose(self):
 
 		# call composition constructor
-		Composition(self.new_name, self.measures, self.timesig, self.keysig_to_key(), self.keysig_scale,
+		Composition(self.new_name, int(self.measures), (int(self.timesig[0]), int(self.timesig[1])), self.keysig_to_key(), self.keysig_scale,
 			[self.lh_range1_lynotation, self.lh_range2_lynotation], [self.rh_range1_lynotation, self.rh_range2_lynotation], self.extended_filepath, self.pdf, self.midi)
+
+	def _update_cats(self):
+		if self.keyboard_cat == False:
+			self.ui.keyboard_cat.show()
+			self.keyboard_cat = True
+		else:
+			self.ui.keyboard_cat.hide()
+			self.keyboard_cat = False
 
 	def _update_new_name(self):
 		self.new_name = self.ui.new_name.text()
 		self.ui.name_label_1.setText(self.new_name)
 
 	def _update_measures(self):
-		self.measures = int(self.ui.measures.text())
+		self.measures = self.ui.measures.text()
 
 	def _update_timesig(self):
-		self.timesig = (int(self.ui.timesig_num.text()), int(self.ui.timesig_den.text()))
+		self.timesig = (self.ui.timesig_num.text(), self.ui.timesig_den.text())
 		
 #	def __init__(self, name, measures, timesig, key, key_scale, left_limits, right_limits, extended_filepath, pdf, midi):
 	def _update_keysig_note(self):   # change to cycler
