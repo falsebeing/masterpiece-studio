@@ -16,9 +16,9 @@ INTERVALS = [1, 2, 3, 4, 5, 6, 7]
 
 class Notation:
 
-	def __init__(self, key, key_type, right_limits, left_limits, rhythm, accidental_freq, rest_freq, anchor_strength):
+	def __init__(self, key, key_scale, left_limits, right_limits, rhythm, accidental_freq, rest_freq, anchor_strength):
 		self.key = key
-		self.key_type = key_type
+		self.key_scale = key_scale
 		self.base_list = self.get_base_list
 		self.scale_map = self.get_scale_map() # Only used in function map_scale
 		self.scale = self.map_scale()
@@ -30,8 +30,8 @@ class Notation:
 		print(f"DEBUG: rh_notes: {self.rh_notes}")
 		print(f"DEBUG: lh_notes: {self.lh_notes}")
 
-		self.right_rhythm = rhythm.right_notation
-		self.left_rhythm = rhythm.left_notation
+		self.right_rhythm = rhythm.right_rhythm
+		self.left_rhythm = rhythm.left_rhythm
 
 		self.accidental_freq = accidental_freq
 		self.rest_freq = rest_freq
@@ -43,7 +43,7 @@ class Notation:
 		self.left_notation = self.compose_left_hand()
 
 	def get_base_list(self):
-		if self.key_type == "major":
+		if self.key_scale == "major":
 			if self.key in ["g", "d", "a", "e", "b"] or "is" in self.key:
 				return SHARP_LIST
 			else:
@@ -126,11 +126,11 @@ class Notation:
 		return scale
 
 	def get_scale_map(self):
-		if self.key_type == "major":
+		if self.key_scale == "major":
 			return MAJOR_MAP
-		elif self.key_type == "minor":
+		elif self.key_scale == "minor":
 			return MINOR_MAP
-		elif self.key_type == "harmonic":
+		elif self.key_scale == "harmonic":
 			return MINOR_HARM_MAP
 		else:
 			return MINOR_MEL_MAP

@@ -1,5 +1,11 @@
+"""
+
+"""
+
+
+
 import random
-import logging
+from custom_logging import *
 
 ALL_DURATION_NOTATIONS = ['1.', '1', '2.', '2', '4.', '4', '8.', '8', '16.', '16', '32.', '32', '64']
 DURATION_WEIGHTS = [(6, 1), (4, 6), (3, 5), (2, 16), (1.5, 3), (1, 26), (.75, 3), (.5, 20), (.375, 4), (.25, 6), (.1875, 0), (.125, 2), (.0625, 1)]
@@ -23,21 +29,19 @@ TIME_SIGNATURE = (4, 4)
 
 
 class Rhythm:
-	def __init__(self, measures, time_signature, title='test'):
-
-		logging.basicConfig(filename=f"{title}_durations.log")
-
-		logging.info("Initializing Rhythm")
+	def __init__(self, measures, time_signature):
 
 		self.measures = measures
 		self.time_signature = time_signature
 
-		logging.info(f"init - measures: {self.measures}\ntime signature: {self.time_signature}")
 		self.all_durations = self.get_all_durations()
-		print(f"DISPLAYING self.all_durations: {self.all_durations}\n")
+		log_durations(f"self.all_durations: {self.all_durations}\n", source = "- Rhythm init -")
+
 		self.appropriate_durations = self.get_appropriate_durations()
 		print(f"DISPLAYING self.appropriate_durations: {self.appropriate_durations}\n")
+
 		self.whole_beat_durations = self.get_whole_beat_durations()
+
 		print(f"DISPLAYING self.whole_beat_durations: {self.whole_beat_durations}\n")
 		self.weights_list = self.get_weights()
 		print(f"DISPLAYING self.weights_list: {self.weights_list}\n")
