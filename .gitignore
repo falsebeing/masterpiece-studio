@@ -1,14 +1,5 @@
 .idea/
 __pycache__/
-Output/
-Keepers/
-Dep/
-
-*.mid
-*.ly
-*.pdf
-*.log
-
-reference.py
-
-Dlog.txt
+output/
+keepers/
+logs/

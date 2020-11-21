@@ -29,10 +29,10 @@ TIME_SIGNATURE = (4, 4)
 
 
 class Rhythm:
-	def __init__(self, measures, time_signature):
+	def __init__(self, measures, timesig):
 
 		self.measures = measures
-		self.time_signature = time_signature
+		self.timesig = timesig
 
 		self.all_durations = self.get_all_durations()
 		log_durations(f"self.all_durations: {self.all_durations}\n", source = "- Rhythm init -")
@@ -50,27 +50,27 @@ class Rhythm:
 
 		self.fill_pattern()
 
-		self.left_notation, self.right_notation = self.prepare_notation()
+		self.left_pattern, self.right_pattern = self.prepare_notation()
 
 
 
 	def prepare_notation(self):
-		left_notation = []
-		right_notation = []
+		left_pattern = []
+		right_pattern = []
 		m_count = 1
 		for measure in self.pattern:
-			right_notation.append(f"M{m_count}")
-			left_notation.append(f"M{m_count}")
+			right_pattern.append(f"M{m_count}")
+			left_pattern.append(f"M{m_count}")
 			for beat in measure.right_hand["pattern"]:
 				for duration in beat:
-					right_notation.append(duration[0][0])
+					right_pattern.append(duration[0][0])
 			for beat in measure.left_hand["pattern"]:
 				for duration in beat:
-					left_notation.append(duration[0][0])
-			right_notation.append("|")
-			left_notation.append("|")
+					left_pattern.append(duration[0][0])
+			right_pattern.append("|")
+			left_pattern.append("|")
 			m_count += 1
-		return left_notation, right_notation
+		return left_pattern, right_pattern
 
 	def fill_pattern(self):
 		right_carryover = 0
@@ -82,7 +82,7 @@ class Rhythm:
 			if measure+1 == self.measures:
 				final_measure = True
 
-			self.pattern.append(Measure(measure+1, self.time_signature, self.all_durations, self.appropriate_durations, self.whole_beat_durations, self.weights_list, right_carryover=right_carryover, left_carryover=left_carryover, right_pairing=right_pairing, final_measure=final_measure))
+			self.pattern.append(Measure(measure+1, self.timesig, self.all_durations, self.appropriate_durations, self.whole_beat_durations, self.weights_list, right_carryover=right_carryover, left_carryover=left_carryover, right_pairing=right_pairing, final_measure=final_measure))
 
 			# Should just pass the previous measure, new measure can unpack all this at init
 			right_carryover, right_pairing = self.pattern[-1].right_hand["overflow"], self.pattern[-1].right_hand["leftover_pairing"]
@@ -96,14 +96,14 @@ class Rhythm:
 
 	def get_all_durations(self):
 		beat_values = self.generate_beat_value_list()
-		all_durations = [bv for bv in beat_values if self.time_signature[0]]
+		all_durations = [bv for bv in beat_values if self.timesig[0]]
 		all_durations = sorted(all_durations, key=lambda d: d[1])
 		all_durations.reverse()
 		return all_durations
 
 	def get_appropriate_durations(self):
 		beat_values = self.generate_beat_value_list()
-		return [bv for bv in beat_values if self.time_signature[0] >= bv[1] and ".." not in bv[0]]
+		return [bv for bv in beat_values if self.timesig[0] >= bv[1] and ".." not in bv[0]]
 
 	def get_whole_beat_durations(self):
 		return [d for d in self.all_durations if float(int(d[1])) == d[1]]
@@ -114,13 +114,13 @@ class Rhythm:
 
 			if '..' in d:
 				base_value = 1/int(d[:-2])
-				beat_value = base_value * self.time_signature[1] * 1.75
+				beat_value = base_value * self.timesig[1] * 1.75
 			elif '.' in d:
 				base_value = 1/int(d[:-1])
-				beat_value = base_value * self.time_signature[1] * 1.5
+				beat_value = base_value * self.timesig[1] * 1.5
 			else:
 				base_value = 1/int(d)
-				beat_value = base_value * self.time_signature[1]
+				beat_value = base_value * self.timesig[1]
 			beat_values.append((d, beat_value))
 		
 		return beat_values
@@ -133,11 +133,11 @@ class Rhythm:
 
 
 class Measure:
-	def __init__(self, number, time_signature, all_durations, appropriate_durations, whole_beat_durations, duration_weights, right_carryover=0, left_carryover=0, right_pairing=[], left_pairing=[], final_measure=False):
+	def __init__(self, number, timesig, all_durations, appropriate_durations, whole_beat_durations, duration_weights, right_carryover=0, left_carryover=0, right_pairing=[], left_pairing=[], final_measure=False):
 		# measure number not necessary, but used to help debugging
 		self.number = number
-		self.time_signature = time_signature
-		self.beats_per_measure = time_signature[0]
+		self.timesig = timesig
+		self.beats_per_measure = timesig[0]
 		self.final_measure = final_measure
 
 		self.all_durations = all_durations
@@ -436,7 +436,7 @@ class Measure:
 				print(f"LOG(fill_small_carryover) {duration} matches {remaining_beats} remaining_beats. Returning")
 				return (duration[0], duration[1]), count
 			elif duration[1] < remaining_beats:
-				# if self.time_signature[1] % duration[1]
+				# if self.timesig[1] % duration[1]
 				print(f"LOG(fill_small_carryover): {duration} found to fit in {remaining_beats}. Appending. {remaining_beats-duration[1]} beats remaining")
 				pattern.append(((duration[0]+"~", duration[1]), count))
 				remaining_beats -= duration[1]
@@ -460,11 +460,11 @@ if __name__ == "__main__":
 
 	rhythm = Rhythm(6, (7,8))
 
-	print(rhythm.right_notation)
+	print(rhythm.right_pattern)
 	rhythm.display_hand_patterns()
 	for measure in rhythm.pattern:
 		print(f"Measure {measure.number} syncs: {measure.syncs} from markers {measure.sync_markers}")
 		print(f"Matched syncs used: {measure.matched_syncs}")
-	print(f"left: {rhythm.left_notation}")
-	print(f"right: {rhythm.right_notation}")
+	print(f"left: {rhythm.left_pattern}")
+	print(f"right: {rhythm.right_pattern}")
 	print(f'durations list: {rhythm.appropriate_durations} {rhythm.weights_list}')

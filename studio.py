@@ -3,7 +3,6 @@ from studio_ui import Ui_MainWindow
 
 from custom_logging import *
 from composition import *
-import subprocess
 import sys
 
 import time
@@ -12,9 +11,6 @@ import time
 NOTES = ["A", "B", "C", "D", "E", "F", "G"]
 ACCIDENTALS = ["♮", "♯", "♭"]
 SCALES = ["major", "minor", "harmonic", "melodic"]
-
-OUTPUT_FILEPATH = "output\\"
-
 
 
 class Studio(QMainWindow):
@@ -50,14 +46,16 @@ class Studio(QMainWindow):
 		self.ui.corner_logo.clicked.connect(self.swap_frames)
 		self.ui.corner_logo_2.clicked.connect(self.swap_frames)
 
+		self.ui.measures.textEdited.connect(self._update_measures)
+
+		self.ui.new_name.textEdited.connect(self._update_new_name)
+
 		self.ui.timesig_num.textEdited.connect(self._update_timesig)
 		self.ui.timesig_den.textEdited.connect(self._update_timesig)
 
 		self.ui.keysig_note.clicked.connect(self._update_keysig_note)
 		self.ui.keysig_acc.clicked.connect(self._update_keysig_acc)
 		self.ui.keysig_scale.clicked.connect(self._update_keysig_scale)
-
-		self.ui.new_name.textEdited.connect(self._update_new_name)
 
 		self.ui.ranges_group.buttonPressed.connect(self._update_ranges_mode)
 		self.ui.lh_range1_slider.valueChanged.connect(self._update_lh_range1)
@@ -70,7 +68,6 @@ class Studio(QMainWindow):
 		self.ui.midi.stateChanged.connect(self._update_midi)
 
 		self.ui.compose.clicked.connect(self.compose)
-
 
 
 	def init_user_input_vars(self):
@@ -89,6 +86,7 @@ class Studio(QMainWindow):
 		self.rh_range2 = self.ui.rh_range2_slider.value()
 		self.lh_range2 = self.ui.lh_range2_slider.value()
 
+		self._update_measures()
 		self._update_timesig()
 		self._update_keysig_note()
 		self._update_keysig_acc()
@@ -103,13 +101,20 @@ class Studio(QMainWindow):
 	def compose(self):
 
 		# call composition constructor
-		Composition(self.new_name, self.keysig_to_key(), self.key_scale, self.timesig,
+		Composition(self.new_name, self.measures, self.timesig, self.keysig_to_key(), self.keysig_scale,
 			[self.lh_range1_lynotation, self.lh_range2_lynotation], [self.rh_range1_lynotation, self.rh_range2_lynotation], self.extended_filepath, self.pdf, self.midi)
 
+	def _update_new_name(self):
+		self.new_name = self.ui.new_name.text()
+		self.ui.name_label_1.setText(self.new_name)
+
+	def _update_measures(self):
+		self.measures = int(self.ui.measures.text())
+
 	def _update_timesig(self):
-		self.timesig = (self.ui.timesig_num.text(), self.ui.timesig_den.text())
+		self.timesig = (int(self.ui.timesig_num.text()), int(self.ui.timesig_den.text()))
 		
-#(self, name, key, key_scale, timesig, left_limits, right_limits, extended_filepath, pdf, midi):
+#	def __init__(self, name, measures, timesig, key, key_scale, left_limits, right_limits, extended_filepath, pdf, midi):
 	def _update_keysig_note(self):   # change to cycler
 		self.cycle_keysig_note()
 		self.keysig_note = NOTES[self.keysig_note_index]
@@ -155,16 +160,11 @@ class Studio(QMainWindow):
 			self.ui.sharp_ranges.setEnabled(True)
 			self.ui.flat_ranges.setEnabled(True)
 
-
 	def cycle_keysig_acc(self):
 		if self.keysig_acc_index < 2:
 			self.keysig_acc_index += 1
 		else:
 			self.keysig_acc_index = 0
-
-	def _update_new_name(self):
-		self.new_name = self.ui.new_name.text()
-		self.ui.name_label_1.setText(self.new_name)
 
 	def _update_ranges_mode(self, button):
 		if button == self.ui.sharp_ranges:
@@ -260,6 +260,8 @@ class Studio(QMainWindow):
 
 	def _update_extended_filepath(self):
 		self.extended_filepath = self.ui.extended_filepath.text()
+		if self.extended_filepath:
+			self.extended_filepath += "/"
 
 	def _update_pdf(self):
 		self.pdf = self.ui.pdf.isChecked()

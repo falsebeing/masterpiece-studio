@@ -416,12 +416,12 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_3.addWidget(self.length_label)
 
-        self.measure_count = QLineEdit(self.horizontalLayoutWidget_2)
-        self.measure_count.setObjectName(u"measure_count")
-        self.measure_count.setMinimumSize(QSize(0, 30))
-        self.measure_count.setMaximumSize(QSize(60, 16777215))
-        self.measure_count.setFont(font3)
-        self.measure_count.setStyleSheet(u"QLineEdit {\n"
+        self.measures = QLineEdit(self.horizontalLayoutWidget_2)
+        self.measures.setObjectName(u"measures")
+        self.measures.setMinimumSize(QSize(0, 30))
+        self.measures.setMaximumSize(QSize(60, 16777215))
+        self.measures.setFont(font3)
+        self.measures.setStyleSheet(u"QLineEdit {\n"
 "	color: rgb(137, 137, 206);\n"
 "	border-radius: 4px\n"
 "}\n"
@@ -429,10 +429,10 @@ class Ui_MainWindow(object):
 "QLineEdit:hover {\n"
 "	background-color: rgb(24, 40, 40);\n"
 "}")
-        self.measure_count.setMaxLength(3)
-        self.measure_count.setAlignment(Qt.AlignCenter)
+        self.measures.setMaxLength(3)
+        self.measures.setAlignment(Qt.AlignCenter)
 
-        self.horizontalLayout_3.addWidget(self.measure_count)
+        self.horizontalLayout_3.addWidget(self.measures)
 
         self.output_tree = QTreeView(self.studio)
         self.output_tree.setObjectName(u"output_tree")
@@ -992,9 +992,9 @@ class Ui_MainWindow(object):
         self.prompt.setText(QCoreApplication.translate("MainWindow", u"Professor Whitefur can do many things, just tell him what you need", None))
         self.prompt_2.setText(QCoreApplication.translate("MainWindow", u"The Studio", None))
         self.length_label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Length in measures:</p><p><br/></p></body></html>", None))
-        self.measure_count.setInputMask(QCoreApplication.translate("MainWindow", u"000", None))
-        self.measure_count.setText(QCoreApplication.translate("MainWindow", u"16", None))
-        self.measure_count.setPlaceholderText("")
+        self.measures.setInputMask(QCoreApplication.translate("MainWindow", u"000", None))
+        self.measures.setText(QCoreApplication.translate("MainWindow", u"16", None))
+        self.measures.setPlaceholderText("")
         self.rh_range_label.setText(QCoreApplication.translate("MainWindow", u"Right:", None))
         self.rh_range2_header_label.setText(QCoreApplication.translate("MainWindow", u"Note", None))
         self.rh_range1_header_label.setText(QCoreApplication.translate("MainWindow", u"Note", None))

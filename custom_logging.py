@@ -17,7 +17,7 @@ def log_debug(message, source='', display=True):
 	logging.debug(message)
 
 def config_log():
-	logging.basicConfig(filename=f"dojo_server{filename_timestamp()}.log", level=logging.DEBUG,
+	logging.basicConfig(filename=f"logs/studio-{filename_timestamp()}.log", level=logging.DEBUG,
 		format='%(asctime)s - %(message)s')
 
 def log_info(message, source='', display=True):

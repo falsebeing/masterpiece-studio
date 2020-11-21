@@ -30,8 +30,8 @@ class Notation:
 		print(f"DEBUG: rh_notes: {self.rh_notes}")
 		print(f"DEBUG: lh_notes: {self.lh_notes}")
 
-		self.right_rhythm = rhythm.right_rhythm
-		self.left_rhythm = rhythm.left_rhythm
+		self.right_pattern = rhythm.right_pattern
+		self.left_pattern = rhythm.left_pattern
 
 		self.accidental_freq = accidental_freq
 		self.rest_freq = rest_freq
@@ -150,7 +150,7 @@ class Notation:
 		tied_note = False
 		p = 'r'
 
-		for d in self.right_rhythm:
+		for d in self.right_pattern:
 
 			if "M" in d:
 				continue
@@ -207,7 +207,7 @@ class Notation:
 		span = 0
 		tied_note = False
 
-		for d in self.left_rhythm:
+		for d in self.left_pattern:
 
 			if "M" in d:
 				continue
