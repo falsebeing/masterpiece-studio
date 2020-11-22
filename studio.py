@@ -1,6 +1,6 @@
 from PySide2.QtWidgets import QMainWindow, QApplication, QButtonGroup, QFileSystemModel
 from PySide2.QtCore import QDir
-from studio_ui import Ui_MainWindow
+from studioui import Ui_MainWindow
 
 from custom_logging import *
 from composition import *
@@ -25,13 +25,11 @@ class Studio(QMainWindow):
 
 		self.init_ui()
 
-		self.frames = [self.ui.studio, self.ui.meet_the_composer]
-		self.active_frame = self.ui.studio
-
 	def init_ui(self):
 
-		self.ui.keyboard_cat.hide()
-		self.keyboard_cat = False
+		self.ui.nav_group = QButtonGroup()
+		self.ui.nav_group.addButton(self.ui.nav_configure)
+		self.ui.nav_group.addButton(self.ui.nav_write)
 
 		self.ui.ranges_group = QButtonGroup()
 		self.ui.ranges_group.addButton(self.ui.sharp_ranges)
@@ -46,14 +44,12 @@ class Studio(QMainWindow):
 		# to modify class attributes and refresh other parts of the display if needed
 		# some _updates use other functions to handle the attribute change
 
-		self.ui.cats.stateChanged.connect(self._update_cats)
 
-		self.ui.corner_logo.clicked.connect(self.swap_frames)
-		self.ui.corner_logo_2.clicked.connect(self.swap_frames)
+		self.ui.nav_group.buttonClicked.connect(self.navigate)
 
 		self.ui.measures.textEdited.connect(self._update_measures)
 
-		self.ui.new_name.textEdited.connect(self._update_new_name)
+		self.ui.song_name.textEdited.connect(self._update_song_name)
 
 		self.ui.timesig_num.textEdited.connect(self._update_timesig)
 		self.ui.timesig_den.textEdited.connect(self._update_timesig)
@@ -62,7 +58,7 @@ class Studio(QMainWindow):
 		self.ui.keysig_acc.clicked.connect(self._update_keysig_acc)
 		self.ui.keysig_scale.clicked.connect(self._update_keysig_scale)
 
-		self.ui.ranges_group.buttonPressed.connect(self._update_ranges_mode)
+		self.ui.ranges_group.buttonClicked.connect(self._update_ranges_mode)
 		self.ui.lh_range1_slider.valueChanged.connect(self._update_lh_range1)
 		self.ui.lh_range2_slider.valueChanged.connect(self._update_lh_range2)
 		self.ui.rh_range1_slider.valueChanged.connect(self._update_rh_range1)
@@ -102,17 +98,23 @@ class Studio(QMainWindow):
 		self._update_keysig_note()
 		self._update_keysig_acc()
 		self._update_keysig_scale()
-		self._update_new_name()
+		self._update_song_name()
 		self.refresh_range_vars() # calls all 4 range updates
 		self._update_extended_filepath()
 		self._update_pdf()
 		self._update_midi()
 
+	def navigate(self, button):
+		if button == self.ui.nav_configure:
+			self.ui.configure.raise_()
+		elif button == self.ui.nav_write:
+			self.ui.write.raise_()
+
 
 	def compose(self):
 
 		# call composition constructor
-		Composition(self.new_name, int(self.measures), (int(self.timesig[0]), int(self.timesig[1])), self.keysig_to_key(), self.keysig_scale,
+		Composition(self.song_name, int(self.measures), (int(self.timesig[0]), int(self.timesig[1])), self.keysig_to_key(), self.keysig_scale,
 			[self.lh_range1_lynotation, self.lh_range2_lynotation], [self.rh_range1_lynotation, self.rh_range2_lynotation], self.extended_filepath, self.pdf, self.midi)
 
 	def _update_cats(self):
@@ -123,9 +125,9 @@ class Studio(QMainWindow):
 			self.ui.keyboard_cat.hide()
 			self.keyboard_cat = False
 
-	def _update_new_name(self):
-		self.new_name = self.ui.new_name.text()
-		self.ui.name_label_1.setText(self.new_name)
+	def _update_song_name(self):
+		self.song_name = self.ui.song_name.text()
+		self.ui.name_label_1.setText(self.song_name)
 
 	def _update_measures(self):
 		self.measures = self.ui.measures.text()
@@ -288,13 +290,6 @@ class Studio(QMainWindow):
 	def _update_midi(self):
 		self.midi = self.ui.pdf.isChecked()
 
-	def swap_frames(self):
-		if self.active_frame == self.ui.studio:
-			self.active_frame = self.ui.meet_the_composer
-		else:
-			self.active_frame = self.ui.studio
-
-		self.active_frame.raise_()
 
 	# converts lyform notation to numbered notation for display purposes for range sliders
 	def lynotation_to_numbered(self, lynotation):

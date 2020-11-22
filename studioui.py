@@ -25,12 +25,12 @@ class Ui_MainWindow(object):
 "")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.studio = QFrame(self.centralwidget)
-        self.studio.setObjectName(u"studio")
-        self.studio.setGeometry(QRect(0, 0, 1600, 900))
-        self.studio.setFrameShape(QFrame.StyledPanel)
-        self.studio.setFrameShadow(QFrame.Raised)
-        self.horizontalLayoutWidget = QWidget(self.studio)
+        self.configure = QFrame(self.centralwidget)
+        self.configure.setObjectName(u"configure")
+        self.configure.setGeometry(QRect(0, 80, 1600, 820))
+        self.configure.setFrameShape(QFrame.StyledPanel)
+        self.configure.setFrameShadow(QFrame.Raised)
+        self.horizontalLayoutWidget = QWidget(self.configure)
         self.horizontalLayoutWidget.setObjectName(u"horizontalLayoutWidget")
         self.horizontalLayoutWidget.setGeometry(QRect(60, 390, 191, 54))
         self.key_sig_box = QHBoxLayout(self.horizontalLayoutWidget)
@@ -116,7 +116,7 @@ class Ui_MainWindow(object):
 
         self.key_sig_box.addLayout(self.verticalLayout)
 
-        self.verticalLayoutWidget_3 = QWidget(self.studio)
+        self.verticalLayoutWidget_3 = QWidget(self.configure)
         self.verticalLayoutWidget_3.setObjectName(u"verticalLayoutWidget_3")
         self.verticalLayoutWidget_3.setGeometry(QRect(60, 550, 511, 51))
         self.lh_range1_box = QVBoxLayout(self.verticalLayoutWidget_3)
@@ -162,7 +162,7 @@ class Ui_MainWindow(object):
 
         self.lh_range1_box.addWidget(self.lh_range1_slider)
 
-        self.horizontalLayoutWidget_3 = QWidget(self.studio)
+        self.horizontalLayoutWidget_3 = QWidget(self.configure)
         self.horizontalLayoutWidget_3.setObjectName(u"horizontalLayoutWidget_3")
         self.horizontalLayoutWidget_3.setGeometry(QRect(50, 290, 171, 91))
         self.time_sig_box = QHBoxLayout(self.horizontalLayoutWidget_3)
@@ -230,7 +230,7 @@ class Ui_MainWindow(object):
 
         self.time_sig_box.addLayout(self.time_sig)
 
-        self.lh_range_label = QLabel(self.studio)
+        self.lh_range_label = QLabel(self.configure)
         self.lh_range_label.setObjectName(u"lh_range_label")
         self.lh_range_label.setGeometry(QRect(70, 520, 71, 26))
         self.lh_range_label.setFont(font)
@@ -238,7 +238,7 @@ class Ui_MainWindow(object):
 "	color:rgb(137, 137, 206)\n"
 "	\n"
 "}")
-        self.verticalLayoutWidget_4 = QWidget(self.studio)
+        self.verticalLayoutWidget_4 = QWidget(self.configure)
         self.verticalLayoutWidget_4.setObjectName(u"verticalLayoutWidget_4")
         self.verticalLayoutWidget_4.setGeometry(QRect(60, 600, 511, 51))
         self.lh_range2_box = QVBoxLayout(self.verticalLayoutWidget_4)
@@ -284,7 +284,7 @@ class Ui_MainWindow(object):
 
         self.lh_range2_box.addWidget(self.lh_range2_slider)
 
-        self.lh_range1_header_label = QLabel(self.studio)
+        self.lh_range1_header_label = QLabel(self.configure)
         self.lh_range1_header_label.setObjectName(u"lh_range1_header_label")
         self.lh_range1_header_label.setGeometry(QRect(260, 520, 29, 26))
         self.lh_range1_header_label.setFont(font)
@@ -292,7 +292,7 @@ class Ui_MainWindow(object):
 "	color:rgb(137, 137, 206)\n"
 "	\n"
 "}")
-        self.lh_range2_header_label = QLabel(self.studio)
+        self.lh_range2_header_label = QLabel(self.configure)
         self.lh_range2_header_label.setObjectName(u"lh_range2_header_label")
         self.lh_range2_header_label.setGeometry(QRect(320, 520, 29, 26))
         self.lh_range2_header_label.setFont(font)
@@ -300,7 +300,7 @@ class Ui_MainWindow(object):
 "	color:rgb(137, 137, 206)\n"
 "	\n"
 "}")
-        self.dash = QLabel(self.studio)
+        self.dash = QLabel(self.configure)
         self.dash.setObjectName(u"dash")
         self.dash.setGeometry(QRect(300, 520, 16, 26))
         self.dash.setFont(font)
@@ -308,97 +308,7 @@ class Ui_MainWindow(object):
 "	color:rgb(137, 137, 206)\n"
 "	\n"
 "}")
-        self.new_name = QLineEdit(self.studio)
-        self.new_name.setObjectName(u"new_name")
-        self.new_name.setGeometry(QRect(180, 160, 293, 44))
-        self.new_name.setMinimumSize(QSize(240, 44))
-        font4 = QFont()
-        font4.setFamily(u"Rasa")
-        font4.setPointSize(14)
-        self.new_name.setFont(font4)
-        self.new_name.setStyleSheet(u"QLineEdit {\n"
-"	border: 2px solid rgb(67, 67, 100);\n"
-"	border-radius: 10px;\n"
-"	color: rgb(137, 137, 206);\n"
-"	padding-left: 10px;\n"
-"	padding-right: 10px;\n"
-"	\n"
-"	background-color: rgb(25, 40, 40);\n"
-"}\n"
-"\n"
-"QLineEdit:hover {\n"
-"	border: 2px solid rgb(36, 36, 54);\n"
-"}\n"
-"\n"
-"QLineEdit:focus {\n"
-"	border: rgb(85, 170, 255);\n"
-"	background-color: rgb(24, 40, 40);\n"
-"}\n"
-"\n"
-"")
-        self.new_name.setCursorPosition(0)
-        self.extended_filepath = QLineEdit(self.studio)
-        self.extended_filepath.setObjectName(u"extended_filepath")
-        self.extended_filepath.setGeometry(QRect(1060, 160, 281, 40))
-        self.extended_filepath.setMinimumSize(QSize(240, 40))
-        font5 = QFont()
-        font5.setFamily(u"Rasa")
-        font5.setPointSize(12)
-        self.extended_filepath.setFont(font5)
-        self.extended_filepath.setStyleSheet(u"QLineEdit {\n"
-"	border: 2px solid rgb(67, 67, 100);\n"
-"	border-radius: 10px;\n"
-"	color: rgb(137, 137, 206);\n"
-"	padding-left: 10px;\n"
-"	padding-right: 10px;\n"
-"	\n"
-"	background-color: rgb(25, 40, 40);\n"
-"}\n"
-"\n"
-"QLineEdit:hover {\n"
-"	border: 2px solid rgb(36, 36, 54);\n"
-"}\n"
-"\n"
-"QLineEdit:focus {\n"
-"	border: rgb(85, 170, 255);\n"
-"	background-color: rgb(24, 40, 40);\n"
-"}")
-        self.extended_filepath.setCursorPosition(0)
-        self.additional_fp_label = QLabel(self.studio)
-        self.additional_fp_label.setObjectName(u"additional_fp_label")
-        self.additional_fp_label.setGeometry(QRect(1060, 120, 131, 30))
-        self.additional_fp_label.setMaximumSize(QSize(16777215, 30))
-        self.additional_fp_label.setFont(font)
-        self.additional_fp_label.setStyleSheet(u"color: rgb(137, 137, 206);")
-        self.additional_fp_label.setAlignment(Qt.AlignCenter)
-        self.additional_fp_label.setMargin(6)
-        self.prompt = QLabel(self.studio)
-        self.prompt.setObjectName(u"prompt")
-        self.prompt.setGeometry(QRect(130, 60, 171, 61))
-        self.prompt.setFont(font)
-        self.prompt.setStyleSheet(u"color: rgb(137, 137, 206);")
-        self.prompt.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
-        self.prompt.setWordWrap(True)
-        self.prompt.setMargin(6)
-        self.prompt_2 = QLabel(self.studio)
-        self.prompt_2.setObjectName(u"prompt_2")
-        self.prompt_2.setGeometry(QRect(130, 0, 261, 51))
-        font6 = QFont()
-        font6.setPointSize(28)
-        self.prompt_2.setFont(font6)
-        self.prompt_2.setStyleSheet(u"color: rgb(137, 137, 206);")
-        self.prompt_2.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
-        self.prompt_2.setWordWrap(True)
-        self.prompt_2.setMargin(6)
-        self.timesig_line_2 = QFrame(self.studio)
-        self.timesig_line_2.setObjectName(u"timesig_line_2")
-        self.timesig_line_2.setGeometry(QRect(130, 48, 291, 16))
-        self.timesig_line_2.setMinimumSize(QSize(0, 10))
-        self.timesig_line_2.setFont(font)
-        self.timesig_line_2.setLineWidth(4)
-        self.timesig_line_2.setFrameShape(QFrame.HLine)
-        self.timesig_line_2.setFrameShadow(QFrame.Sunken)
-        self.horizontalLayoutWidget_2 = QWidget(self.studio)
+        self.horizontalLayoutWidget_2 = QWidget(self.configure)
         self.horizontalLayoutWidget_2.setObjectName(u"horizontalLayoutWidget_2")
         self.horizontalLayoutWidget_2.setGeometry(QRect(10, 240, 231, 41))
         self.horizontalLayout_3 = QHBoxLayout(self.horizontalLayoutWidget_2)
@@ -434,14 +344,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_3.addWidget(self.measures)
 
-        self.output_tree = QTreeView(self.studio)
-        self.output_tree.setObjectName(u"output_tree")
-        self.output_tree.setGeometry(QRect(910, 230, 431, 281))
-        self.output_tree.setStyleSheet(u"QTreeView {\n"
-"	color: rgb(137, 137, 206);\n"
-"	background-color: rgb(25, 40, 40);\n"
-"}")
-        self.rh_range_label = QLabel(self.studio)
+        self.rh_range_label = QLabel(self.configure)
         self.rh_range_label.setObjectName(u"rh_range_label")
         self.rh_range_label.setGeometry(QRect(70, 670, 121, 26))
         self.rh_range_label.setFont(font)
@@ -449,7 +352,7 @@ class Ui_MainWindow(object):
 "	color:rgb(137, 137, 206)\n"
 "	\n"
 "}")
-        self.rh_range2_header_label = QLabel(self.studio)
+        self.rh_range2_header_label = QLabel(self.configure)
         self.rh_range2_header_label.setObjectName(u"rh_range2_header_label")
         self.rh_range2_header_label.setGeometry(QRect(320, 670, 29, 26))
         self.rh_range2_header_label.setFont(font)
@@ -457,7 +360,7 @@ class Ui_MainWindow(object):
 "	color:rgb(137, 137, 206)\n"
 "	\n"
 "}")
-        self.rh_range1_header_label = QLabel(self.studio)
+        self.rh_range1_header_label = QLabel(self.configure)
         self.rh_range1_header_label.setObjectName(u"rh_range1_header_label")
         self.rh_range1_header_label.setGeometry(QRect(260, 670, 29, 26))
         self.rh_range1_header_label.setFont(font)
@@ -465,7 +368,7 @@ class Ui_MainWindow(object):
 "	color:rgb(137, 137, 206)\n"
 "	\n"
 "}")
-        self.verticalLayoutWidget_6 = QWidget(self.studio)
+        self.verticalLayoutWidget_6 = QWidget(self.configure)
         self.verticalLayoutWidget_6.setObjectName(u"verticalLayoutWidget_6")
         self.verticalLayoutWidget_6.setGeometry(QRect(60, 750, 511, 51))
         self.rh_range2_box = QVBoxLayout(self.verticalLayoutWidget_6)
@@ -511,7 +414,7 @@ class Ui_MainWindow(object):
 
         self.rh_range2_box.addWidget(self.rh_range2_slider)
 
-        self.verticalLayoutWidget_7 = QWidget(self.studio)
+        self.verticalLayoutWidget_7 = QWidget(self.configure)
         self.verticalLayoutWidget_7.setObjectName(u"verticalLayoutWidget_7")
         self.verticalLayoutWidget_7.setGeometry(QRect(60, 700, 511, 51))
         self.rh_range1_box = QVBoxLayout(self.verticalLayoutWidget_7)
@@ -557,7 +460,7 @@ class Ui_MainWindow(object):
 
         self.rh_range1_box.addWidget(self.rh_range1_slider)
 
-        self.dash_2 = QLabel(self.studio)
+        self.dash_2 = QLabel(self.configure)
         self.dash_2.setObjectName(u"dash_2")
         self.dash_2.setGeometry(QRect(300, 670, 16, 26))
         self.dash_2.setFont(font)
@@ -565,43 +468,7 @@ class Ui_MainWindow(object):
 "	color:rgb(137, 137, 206)\n"
 "	\n"
 "}")
-        self.output_label = QLabel(self.studio)
-        self.output_label.setObjectName(u"output_label")
-        self.output_label.setGeometry(QRect(900, 200, 71, 30))
-        self.output_label.setMinimumSize(QSize(60, 0))
-        self.output_label.setMaximumSize(QSize(120, 30))
-        self.output_label.setFont(font)
-        self.output_label.setStyleSheet(u"color: rgb(137, 137, 206);")
-        self.output_label.setAlignment(Qt.AlignRight|Qt.AlignTop|Qt.AlignTrailing)
-        self.output_label.setWordWrap(True)
-        self.output_label.setMargin(6)
-        self.save_as = QLabel(self.studio)
-        self.save_as.setObjectName(u"save_as")
-        self.save_as.setGeometry(QRect(910, 520, 241, 30))
-        self.save_as.setMaximumSize(QSize(16777215, 30))
-        self.save_as.setFont(font)
-        self.save_as.setStyleSheet(u"color: rgb(137, 137, 206);")
-        self.save_as.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
-        self.save_as.setMargin(6)
-        self.name_label_1 = QLabel(self.studio)
-        self.name_label_1.setObjectName(u"name_label_1")
-        self.name_label_1.setGeometry(QRect(860, 150, 171, 30))
-        self.name_label_1.setMaximumSize(QSize(16777215, 30))
-        font7 = QFont()
-        font7.setPointSize(12)
-        self.name_label_1.setFont(font7)
-        self.name_label_1.setStyleSheet(u"color: rgb(137, 137, 206);")
-        self.name_label_1.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
-        self.name_label_1.setMargin(6)
-        self.writing = QLabel(self.studio)
-        self.writing.setObjectName(u"writing")
-        self.writing.setGeometry(QRect(780, 150, 81, 30))
-        self.writing.setMaximumSize(QSize(16777215, 30))
-        self.writing.setFont(font7)
-        self.writing.setStyleSheet(u"color: rgb(137, 137, 206);")
-        self.writing.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
-        self.writing.setMargin(6)
-        self.horizontalLayoutWidget_4 = QWidget(self.studio)
+        self.horizontalLayoutWidget_4 = QWidget(self.configure)
         self.horizontalLayoutWidget_4.setObjectName(u"horizontalLayoutWidget_4")
         self.horizontalLayoutWidget_4.setGeometry(QRect(150, 460, 73, 51))
         self.ranges_mode = QHBoxLayout(self.horizontalLayoutWidget_4)
@@ -646,6 +513,7 @@ class Ui_MainWindow(object):
 "	border: rgb(85, 170, 255);\n"
 "	background-color: rgb(18, 30, 30);\n"
 "}")
+        self.sharp_ranges.setCheckable(True)
 
         self.ranges_mode.addWidget(self.sharp_ranges)
 
@@ -683,10 +551,11 @@ class Ui_MainWindow(object):
 "	border: rgb(85, 170, 255);\n"
 "	background-color: rgb(18, 30, 30);\n"
 "}")
+        self.flat_ranges.setCheckable(True)
 
         self.ranges_mode.addWidget(self.flat_ranges)
 
-        self.ranges_label = QLabel(self.studio)
+        self.ranges_label = QLabel(self.configure)
         self.ranges_label.setObjectName(u"ranges_label")
         self.ranges_label.setGeometry(QRect(70, 470, 51, 26))
         self.ranges_label.setFont(font)
@@ -694,7 +563,7 @@ class Ui_MainWindow(object):
 "	color:rgb(137, 137, 206)\n"
 "	\n"
 "}")
-        self.lh_span = QLabel(self.studio)
+        self.lh_span = QLabel(self.configure)
         self.lh_span.setObjectName(u"lh_span")
         self.lh_span.setGeometry(QRect(470, 520, 81, 26))
         self.lh_span.setFont(font)
@@ -702,7 +571,7 @@ class Ui_MainWindow(object):
 "	color:rgb(137, 137, 206)\n"
 "	\n"
 "}")
-        self.rh_span = QLabel(self.studio)
+        self.rh_span = QLabel(self.configure)
         self.rh_span.setObjectName(u"rh_span")
         self.rh_span.setGeometry(QRect(470, 670, 81, 26))
         self.rh_span.setFont(font)
@@ -710,7 +579,7 @@ class Ui_MainWindow(object):
 "	color:rgb(137, 137, 206)\n"
 "	\n"
 "}")
-        self.length_label_3 = QLabel(self.studio)
+        self.length_label_3 = QLabel(self.configure)
         self.length_label_3.setObjectName(u"length_label_3")
         self.length_label_3.setGeometry(QRect(400, 520, 60, 30))
         self.length_label_3.setMinimumSize(QSize(60, 0))
@@ -720,7 +589,7 @@ class Ui_MainWindow(object):
         self.length_label_3.setAlignment(Qt.AlignRight|Qt.AlignTop|Qt.AlignTrailing)
         self.length_label_3.setWordWrap(True)
         self.length_label_3.setMargin(6)
-        self.length_label_4 = QLabel(self.studio)
+        self.length_label_4 = QLabel(self.configure)
         self.length_label_4.setObjectName(u"length_label_4")
         self.length_label_4.setGeometry(QRect(400, 670, 60, 30))
         self.length_label_4.setMinimumSize(QSize(60, 0))
@@ -730,14 +599,7 @@ class Ui_MainWindow(object):
         self.length_label_4.setAlignment(Qt.AlignRight|Qt.AlignTop|Qt.AlignTrailing)
         self.length_label_4.setWordWrap(True)
         self.length_label_4.setMargin(6)
-        self.corner_logo = QPushButton(self.studio)
-        self.corner_logo.setObjectName(u"corner_logo")
-        self.corner_logo.setGeometry(QRect(0, 0, 100, 100))
-        icon = QIcon()
-        icon.addFile(u"data/images/avante-note.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.corner_logo.setIcon(icon)
-        self.corner_logo.setIconSize(QSize(100, 100))
-        self.keysig_scale = QPushButton(self.studio)
+        self.keysig_scale = QPushButton(self.configure)
         self.keysig_scale.setObjectName(u"keysig_scale")
         self.keysig_scale.setGeometry(QRect(230, 420, 120, 21))
         self.keysig_scale.setMinimumSize(QSize(120, 20))
@@ -760,9 +622,9 @@ class Ui_MainWindow(object):
 "	border: rgb(85, 170, 255);\n"
 "}\n"
 "")
-        self.keyboard_cat = QFrame(self.studio)
+        self.keyboard_cat = QFrame(self.configure)
         self.keyboard_cat.setObjectName(u"keyboard_cat")
-        self.keyboard_cat.setGeometry(QRect(0, 0, 1600, 900))
+        self.keyboard_cat.setGeometry(QRect(1600, 0, 1600, 900))
         self.keyboard_cat.setFrameShape(QFrame.StyledPanel)
         self.keyboard_cat.setFrameShadow(QFrame.Raised)
         self.keyboard_cat_label_2 = QLabel(self.keyboard_cat)
@@ -771,57 +633,75 @@ class Ui_MainWindow(object):
         self.keyboard_cat_label_2.setGeometry(QRect(0, 0, 1600, 900))
         self.keyboard_cat_label_2.setPixmap(QPixmap(u"data/images/keyboard-cat.png"))
         self.keyboard_cat_label_2.setScaledContents(True)
-        self.compose = QPushButton(self.studio)
-        self.compose.setObjectName(u"compose")
-        self.compose.setGeometry(QRect(910, 680, 400, 40))
-        self.compose.setMinimumSize(QSize(0, 40))
-        self.compose.setMaximumSize(QSize(400, 16777215))
-        self.compose.setStyleSheet(u"QPushButton {\n"
-"	border: 2px solid rgb(67, 67, 100);\n"
-"	border-radius: 10px;\n"
-"	color: rgb(137, 137, 206);\n"
-"	padding-left: 10px;\n"
-"	padding-right: 10px;\n"
+        self.horizontalSlider = QSlider(self.configure)
+        self.horizontalSlider.setObjectName(u"horizontalSlider")
+        self.horizontalSlider.setGeometry(QRect(800, 290, 211, 16))
+        self.horizontalSlider.setOrientation(Qt.Horizontal)
+        self.lh_range2_header_label_2 = QLabel(self.configure)
+        self.lh_range2_header_label_2.setObjectName(u"lh_range2_header_label_2")
+        self.lh_range2_header_label_2.setGeometry(QRect(800, 260, 61, 26))
+        self.lh_range2_header_label_2.setFont(font)
+        self.lh_range2_header_label_2.setStyleSheet(u"QLabel {\n"
+"	color:rgb(137, 137, 206)\n"
 "	\n"
-"	background-color: rgb(25, 40, 40);\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"	border: 2px solid rgb(36, 36, 54);\n"
-"}\n"
-"\n"
-"QPushButton:focus {\n"
-"	border: rgb(85, 170, 255);\n"
-"	background-color: rgb(24, 40, 40);\n"
-"}\n"
-"\n"
-"")
-        self.cats = QCheckBox(self.studio)
-        self.cats.setObjectName(u"cats")
-        self.cats.setGeometry(QRect(910, 640, 121, 31))
-        self.cats.setStyleSheet(u"QCheckBox {\n"
-"	border: 2px solid rgb(67, 67, 100);\n"
-"	border-radius: 10px;\n"
-"	color: rgb(137, 137, 206);\n"
-"	padding-left: 10px;\n"
-"	padding-right: 10px;\n"
+"}")
+        self.lh_range2_header_label_3 = QLabel(self.configure)
+        self.lh_range2_header_label_3.setObjectName(u"lh_range2_header_label_3")
+        self.lh_range2_header_label_3.setGeometry(QRect(950, 260, 61, 26))
+        self.lh_range2_header_label_3.setFont(font)
+        self.lh_range2_header_label_3.setStyleSheet(u"QLabel {\n"
+"	color:rgb(137, 137, 206)\n"
 "	\n"
+"}")
+        self.keyboard_cat.raise_()
+        self.horizontalLayoutWidget.raise_()
+        self.verticalLayoutWidget_3.raise_()
+        self.horizontalLayoutWidget_3.raise_()
+        self.lh_range_label.raise_()
+        self.verticalLayoutWidget_4.raise_()
+        self.lh_range1_header_label.raise_()
+        self.dash.raise_()
+        self.lh_range2_header_label.raise_()
+        self.horizontalLayoutWidget_2.raise_()
+        self.rh_range_label.raise_()
+        self.rh_range2_header_label.raise_()
+        self.rh_range1_header_label.raise_()
+        self.verticalLayoutWidget_6.raise_()
+        self.verticalLayoutWidget_7.raise_()
+        self.dash_2.raise_()
+        self.horizontalLayoutWidget_4.raise_()
+        self.ranges_label.raise_()
+        self.lh_span.raise_()
+        self.rh_span.raise_()
+        self.length_label_3.raise_()
+        self.length_label_4.raise_()
+        self.keysig_scale.raise_()
+        self.horizontalSlider.raise_()
+        self.lh_range2_header_label_2.raise_()
+        self.lh_range2_header_label_3.raise_()
+        self.write = QFrame(self.centralwidget)
+        self.write.setObjectName(u"write")
+        self.write.setGeometry(QRect(0, 80, 1600, 820))
+        self.write.setFrameShape(QFrame.StyledPanel)
+        self.write.setFrameShadow(QFrame.Raised)
+        self.output_tree = QTreeView(self.write)
+        self.output_tree.setObjectName(u"output_tree")
+        self.output_tree.setGeometry(QRect(510, 290, 431, 281))
+        self.output_tree.setStyleSheet(u"QTreeView {\n"
+"	color: rgb(137, 137, 206);\n"
 "	background-color: rgb(25, 40, 40);\n"
-"}\n"
-"\n"
-"QCheckBox:hover {\n"
-"	border: 2px solid rgb(36, 36, 54);\n"
-"}\n"
-"\n"
-"QCheckBox:focus {\n"
-"	border: rgb(85, 170, 255);\n"
-"	background-color: rgb(24, 40, 40);\n"
-"}\n"
-"\n"
-"")
-        self.pdf = QCheckBox(self.studio)
+"}")
+        self.additional_fp_label = QLabel(self.write)
+        self.additional_fp_label.setObjectName(u"additional_fp_label")
+        self.additional_fp_label.setGeometry(QRect(660, 180, 131, 30))
+        self.additional_fp_label.setMaximumSize(QSize(16777215, 30))
+        self.additional_fp_label.setFont(font)
+        self.additional_fp_label.setStyleSheet(u"color: rgb(137, 137, 206);")
+        self.additional_fp_label.setAlignment(Qt.AlignCenter)
+        self.additional_fp_label.setMargin(6)
+        self.pdf = QCheckBox(self.write)
         self.pdf.setObjectName(u"pdf")
-        self.pdf.setGeometry(QRect(910, 560, 111, 31))
+        self.pdf.setGeometry(QRect(510, 620, 111, 31))
         self.pdf.setStyleSheet(u"QCheckBox {\n"
 "	border: 2px solid rgb(67, 67, 100);\n"
 "	border-radius: 10px;\n"
@@ -844,9 +724,36 @@ class Ui_MainWindow(object):
 "")
         self.pdf.setCheckable(True)
         self.pdf.setChecked(True)
-        self.midi = QCheckBox(self.studio)
+        self.extended_filepath = QLineEdit(self.write)
+        self.extended_filepath.setObjectName(u"extended_filepath")
+        self.extended_filepath.setGeometry(QRect(660, 220, 281, 40))
+        self.extended_filepath.setMinimumSize(QSize(240, 40))
+        font4 = QFont()
+        font4.setFamily(u"Rasa")
+        font4.setPointSize(12)
+        self.extended_filepath.setFont(font4)
+        self.extended_filepath.setStyleSheet(u"QLineEdit {\n"
+"	border: 2px solid rgb(67, 67, 100);\n"
+"	border-radius: 10px;\n"
+"	color: rgb(137, 137, 206);\n"
+"	padding-left: 10px;\n"
+"	padding-right: 10px;\n"
+"	\n"
+"	background-color: rgb(25, 40, 40);\n"
+"}\n"
+"\n"
+"QLineEdit:hover {\n"
+"	border: 2px solid rgb(36, 36, 54);\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"	border: rgb(85, 170, 255);\n"
+"	background-color: rgb(24, 40, 40);\n"
+"}")
+        self.extended_filepath.setCursorPosition(0)
+        self.midi = QCheckBox(self.write)
         self.midi.setObjectName(u"midi")
-        self.midi.setGeometry(QRect(910, 600, 111, 31))
+        self.midi.setGeometry(QRect(510, 660, 111, 31))
         self.midi.setStyleSheet(u"QCheckBox {\n"
 "	border: 2px solid rgb(67, 67, 100);\n"
 "	border-radius: 10px;\n"
@@ -868,95 +775,212 @@ class Ui_MainWindow(object):
 "\n"
 "")
         self.midi.setChecked(True)
-        self.keyboard_cat.raise_()
-        self.horizontalLayoutWidget.raise_()
-        self.verticalLayoutWidget_3.raise_()
-        self.horizontalLayoutWidget_3.raise_()
-        self.lh_range_label.raise_()
-        self.verticalLayoutWidget_4.raise_()
-        self.lh_range1_header_label.raise_()
-        self.dash.raise_()
-        self.lh_range2_header_label.raise_()
-        self.new_name.raise_()
-        self.extended_filepath.raise_()
-        self.additional_fp_label.raise_()
-        self.prompt.raise_()
-        self.prompt_2.raise_()
-        self.timesig_line_2.raise_()
-        self.horizontalLayoutWidget_2.raise_()
-        self.output_tree.raise_()
-        self.rh_range_label.raise_()
-        self.rh_range2_header_label.raise_()
-        self.rh_range1_header_label.raise_()
-        self.verticalLayoutWidget_6.raise_()
-        self.verticalLayoutWidget_7.raise_()
-        self.dash_2.raise_()
-        self.output_label.raise_()
-        self.save_as.raise_()
-        self.name_label_1.raise_()
-        self.writing.raise_()
-        self.horizontalLayoutWidget_4.raise_()
-        self.ranges_label.raise_()
-        self.lh_span.raise_()
-        self.rh_span.raise_()
-        self.length_label_3.raise_()
-        self.length_label_4.raise_()
-        self.corner_logo.raise_()
-        self.keysig_scale.raise_()
-        self.compose.raise_()
-        self.cats.raise_()
-        self.pdf.raise_()
-        self.midi.raise_()
-        self.meet_the_composer = QFrame(self.centralwidget)
-        self.meet_the_composer.setObjectName(u"meet_the_composer")
-        self.meet_the_composer.setGeometry(QRect(0, 0, 1600, 900))
-        self.meet_the_composer.setFrameShape(QFrame.StyledPanel)
-        self.meet_the_composer.setFrameShadow(QFrame.Raised)
-        self.whitefur_photo = QLabel(self.meet_the_composer)
-        self.whitefur_photo.setObjectName(u"whitefur_photo")
-        self.whitefur_photo.setGeometry(QRect(10, 100, 1000, 800))
-        self.whitefur_photo.setPixmap(QPixmap(u"data/images/composer.png"))
-        self.label_3 = QLabel(self.meet_the_composer)
-        self.label_3.setObjectName(u"label_3")
-        self.label_3.setGeometry(QRect(1080, 100, 401, 401))
-        self.label_3.setFont(font7)
-        self.label_3.setStyleSheet(u"QFrame {\n"
+        self.compose = QPushButton(self.write)
+        self.compose.setObjectName(u"compose")
+        self.compose.setGeometry(QRect(510, 740, 400, 40))
+        self.compose.setMinimumSize(QSize(0, 40))
+        self.compose.setMaximumSize(QSize(400, 16777215))
+        self.compose.setStyleSheet(u"QPushButton {\n"
+"	border: 2px solid rgb(67, 67, 100);\n"
+"	border-radius: 10px;\n"
 "	color: rgb(137, 137, 206);\n"
-"}")
-        self.label_3.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
-        self.label_3.setWordWrap(True)
-        self.corner_logo_2 = QPushButton(self.meet_the_composer)
-        self.corner_logo_2.setObjectName(u"corner_logo_2")
-        self.corner_logo_2.setGeometry(QRect(0, 0, 100, 100))
-        self.corner_logo_2.setIcon(icon)
-        self.corner_logo_2.setIconSize(QSize(100, 100))
-        self.prompt_4 = QLabel(self.meet_the_composer)
-        self.prompt_4.setObjectName(u"prompt_4")
-        self.prompt_4.setGeometry(QRect(130, 60, 261, 31))
-        self.prompt_4.setFont(font)
-        self.prompt_4.setStyleSheet(u"color: rgb(137, 137, 206);")
-        self.prompt_4.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
-        self.prompt_4.setWordWrap(True)
-        self.prompt_4.setMargin(6)
-        self.timesig_line_3 = QFrame(self.meet_the_composer)
-        self.timesig_line_3.setObjectName(u"timesig_line_3")
-        self.timesig_line_3.setGeometry(QRect(130, 48, 291, 16))
-        self.timesig_line_3.setMinimumSize(QSize(0, 10))
-        self.timesig_line_3.setFont(font)
-        self.timesig_line_3.setLineWidth(4)
-        self.timesig_line_3.setFrameShape(QFrame.HLine)
-        self.timesig_line_3.setFrameShadow(QFrame.Sunken)
-        self.prompt_3 = QLabel(self.meet_the_composer)
-        self.prompt_3.setObjectName(u"prompt_3")
-        self.prompt_3.setGeometry(QRect(130, 0, 381, 51))
-        self.prompt_3.setFont(font6)
-        self.prompt_3.setStyleSheet(u"color: rgb(137, 137, 206);")
-        self.prompt_3.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
-        self.prompt_3.setWordWrap(True)
-        self.prompt_3.setMargin(6)
+"	padding-left: 10px;\n"
+"	padding-right: 10px;\n"
+"	\n"
+"	background-color: rgb(25, 40, 40);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"	border: 2px solid rgb(36, 36, 54);\n"
+"}\n"
+"\n"
+"QPushButton:focus {\n"
+"	border: rgb(85, 170, 255);\n"
+"	background-color: rgb(24, 40, 40);\n"
+"}\n"
+"\n"
+"")
+        self.output_label = QLabel(self.write)
+        self.output_label.setObjectName(u"output_label")
+        self.output_label.setGeometry(QRect(500, 260, 71, 30))
+        self.output_label.setMinimumSize(QSize(60, 0))
+        self.output_label.setMaximumSize(QSize(120, 30))
+        self.output_label.setFont(font)
+        self.output_label.setStyleSheet(u"color: rgb(137, 137, 206);")
+        self.output_label.setAlignment(Qt.AlignRight|Qt.AlignTop|Qt.AlignTrailing)
+        self.output_label.setWordWrap(True)
+        self.output_label.setMargin(6)
+        self.name_label_1 = QLabel(self.write)
+        self.name_label_1.setObjectName(u"name_label_1")
+        self.name_label_1.setGeometry(QRect(310, 590, 171, 30))
+        self.name_label_1.setMaximumSize(QSize(16777215, 30))
+        font5 = QFont()
+        font5.setPointSize(12)
+        self.name_label_1.setFont(font5)
+        self.name_label_1.setStyleSheet(u"color: rgb(137, 137, 206);")
+        self.name_label_1.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+        self.name_label_1.setMargin(6)
+        self.cats = QCheckBox(self.write)
+        self.cats.setObjectName(u"cats")
+        self.cats.setGeometry(QRect(510, 700, 121, 31))
+        self.cats.setStyleSheet(u"QCheckBox {\n"
+"	border: 2px solid rgb(67, 67, 100);\n"
+"	border-radius: 10px;\n"
+"	color: rgb(137, 137, 206);\n"
+"	padding-left: 10px;\n"
+"	padding-right: 10px;\n"
+"	\n"
+"	background-color: rgb(25, 40, 40);\n"
+"}\n"
+"\n"
+"QCheckBox:hover {\n"
+"	border: 2px solid rgb(36, 36, 54);\n"
+"}\n"
+"\n"
+"QCheckBox:focus {\n"
+"	border: rgb(85, 170, 255);\n"
+"	background-color: rgb(24, 40, 40);\n"
+"}\n"
+"\n"
+"")
+        self.save_as = QLabel(self.write)
+        self.save_as.setObjectName(u"save_as")
+        self.save_as.setGeometry(QRect(510, 580, 241, 30))
+        self.save_as.setMaximumSize(QSize(16777215, 30))
+        self.save_as.setFont(font)
+        self.save_as.setStyleSheet(u"color: rgb(137, 137, 206);")
+        self.save_as.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+        self.save_as.setMargin(6)
+        self.writing = QLabel(self.write)
+        self.writing.setObjectName(u"writing")
+        self.writing.setGeometry(QRect(230, 590, 81, 30))
+        self.writing.setMaximumSize(QSize(16777215, 30))
+        self.writing.setFont(font5)
+        self.writing.setStyleSheet(u"color: rgb(137, 137, 206);")
+        self.writing.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.writing.setMargin(6)
+        self.song_name = QLineEdit(self.write)
+        self.song_name.setObjectName(u"song_name")
+        self.song_name.setGeometry(QRect(510, 120, 293, 44))
+        self.song_name.setMinimumSize(QSize(240, 44))
+        font6 = QFont()
+        font6.setFamily(u"Rasa")
+        font6.setPointSize(14)
+        self.song_name.setFont(font6)
+        self.song_name.setStyleSheet(u"QLineEdit {\n"
+"	border: 2px solid rgb(67, 67, 100);\n"
+"	border-radius: 10px;\n"
+"	color: rgb(137, 137, 206);\n"
+"	padding-left: 10px;\n"
+"	padding-right: 10px;\n"
+"	\n"
+"	background-color: rgb(25, 40, 40);\n"
+"}\n"
+"\n"
+"QLineEdit:hover {\n"
+"	border: 2px solid rgb(36, 36, 54);\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"	border: rgb(85, 170, 255);\n"
+"	background-color: rgb(24, 40, 40);\n"
+"}\n"
+"\n"
+"")
+        self.song_name.setCursorPosition(0)
+        self.top_bar = QFrame(self.centralwidget)
+        self.top_bar.setObjectName(u"top_bar")
+        self.top_bar.setGeometry(QRect(0, 0, 1600, 80))
+        self.top_bar.setFrameShape(QFrame.StyledPanel)
+        self.top_bar.setFrameShadow(QFrame.Raised)
+        self.corner_logo = QPushButton(self.top_bar)
+        self.corner_logo.setObjectName(u"corner_logo")
+        self.corner_logo.setGeometry(QRect(0, 0, 80, 80))
+        icon = QIcon()
+        icon.addFile(u"data/images/avante-note.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.corner_logo.setIcon(icon)
+        self.corner_logo.setIconSize(QSize(100, 100))
+        self.horizontalLayoutWidget_5 = QWidget(self.top_bar)
+        self.horizontalLayoutWidget_5.setObjectName(u"horizontalLayoutWidget_5")
+        self.horizontalLayoutWidget_5.setGeometry(QRect(140, 0, 481, 80))
+        self.nav = QHBoxLayout(self.horizontalLayoutWidget_5)
+        self.nav.setSpacing(2)
+        self.nav.setObjectName(u"nav")
+        self.nav.setContentsMargins(0, 0, 0, 0)
+        self.nav_configure = QPushButton(self.horizontalLayoutWidget_5)
+        self.nav_configure.setObjectName(u"nav_configure")
+        sizePolicy1 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.nav_configure.sizePolicy().hasHeightForWidth())
+        self.nav_configure.setSizePolicy(sizePolicy1)
+        self.nav_configure.setMaximumSize(QSize(16777215, 16777215))
+        self.nav_configure.setFont(font1)
+        self.nav_configure.setStyleSheet(u"QPushButton {\n"
+"	border: 2px ;\n"
+"	border-radius: 4px;\n"
+"	color: rgb(37, 37, 59);\n"
+"	padding-left: 4px;\n"
+"	padding-right: 4px;\n"
+"	\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"	color: rgb(137, 137, 206);\n"
+"	background-color:  rgb(18, 30, 30);\n"
+"	border: 2px solid rgb(36, 36, 54);\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton:checked {\n"
+"	color: rgb(123, 184, 184);\n"
+"	border: rgb(85, 170, 255);\n"
+"	border-radius: 4px;\n"
+"	background-color: rgb(25, 40, 40);\n"
+"}\n"
+"")
+        self.nav_configure.setCheckable(True)
+        self.nav_configure.setChecked(True)
+
+        self.nav.addWidget(self.nav_configure)
+
+        self.nav_write = QPushButton(self.horizontalLayoutWidget_5)
+        self.nav_write.setObjectName(u"nav_write")
+        sizePolicy1.setHeightForWidth(self.nav_write.sizePolicy().hasHeightForWidth())
+        self.nav_write.setSizePolicy(sizePolicy1)
+        self.nav_write.setMaximumSize(QSize(16777215, 16777215))
+        self.nav_write.setFont(font1)
+        self.nav_write.setStyleSheet(u"QPushButton {\n"
+"	border: 2px ;\n"
+"	border-radius: 4px;\n"
+"	color: rgb(37, 37, 59);\n"
+"	padding-left: 4px;\n"
+"	padding-right: 4px;\n"
+"	\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"	color: rgb(137, 137, 206);\n"
+"	background-color:  rgb(18, 30, 30);\n"
+"	border: 2px solid rgb(36, 36, 54);\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton:checked {\n"
+"	color: rgb(123, 184, 184);\n"
+"	border: rgb(85, 170, 255);\n"
+"	border-radius: 4px;\n"
+"	background-color: rgb(25, 40, 40);\n"
+"}\n"
+"")
+        self.nav_write.setCheckable(True)
+
+        self.nav.addWidget(self.nav_write)
+
         MainWindow.setCentralWidget(self.centralwidget)
-        self.meet_the_composer.raise_()
-        self.studio.raise_()
+        self.write.raise_()
+        self.top_bar.raise_()
+        self.configure.raise_()
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
         MainWindow.setStatusBar(self.statusbar)
@@ -984,13 +1008,6 @@ class Ui_MainWindow(object):
         self.lh_range1_header_label.setText(QCoreApplication.translate("MainWindow", u"Note", None))
         self.lh_range2_header_label.setText(QCoreApplication.translate("MainWindow", u"Note", None))
         self.dash.setText(QCoreApplication.translate("MainWindow", u"-", None))
-        self.new_name.setText("")
-        self.new_name.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Name a new piece", None))
-        self.extended_filepath.setText("")
-        self.extended_filepath.setPlaceholderText(QCoreApplication.translate("MainWindow", u"/output/", None))
-        self.additional_fp_label.setText(QCoreApplication.translate("MainWindow", u"Extended Filepath", None))
-        self.prompt.setText(QCoreApplication.translate("MainWindow", u"Professor Whitefur can do many things, just tell him what you need", None))
-        self.prompt_2.setText(QCoreApplication.translate("MainWindow", u"The Studio", None))
         self.length_label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Length in measures:</p><p><br/></p></body></html>", None))
         self.measures.setInputMask(QCoreApplication.translate("MainWindow", u"000", None))
         self.measures.setText(QCoreApplication.translate("MainWindow", u"16", None))
@@ -1001,10 +1018,6 @@ class Ui_MainWindow(object):
         self.rh_range2_label.setText(QCoreApplication.translate("MainWindow", u"Note", None))
         self.rh_range1_label.setText(QCoreApplication.translate("MainWindow", u"Note", None))
         self.dash_2.setText(QCoreApplication.translate("MainWindow", u"-", None))
-        self.output_label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>/output/</p></body></html>", None))
-        self.save_as.setText(QCoreApplication.translate("MainWindow", u"filepath/filename", None))
-        self.name_label_1.setText(QCoreApplication.translate("MainWindow", u"new name", None))
-        self.writing.setText(QCoreApplication.translate("MainWindow", u"Writing", None))
         self.sharp_ranges.setText(QCoreApplication.translate("MainWindow", u"\u266f", None))
         self.flat_ranges.setText(QCoreApplication.translate("MainWindow", u"\u266d", None))
         self.ranges_label.setText(QCoreApplication.translate("MainWindow", u"Ranges", None))
@@ -1012,17 +1025,25 @@ class Ui_MainWindow(object):
         self.rh_span.setText(QCoreApplication.translate("MainWindow", u"steps", None))
         self.length_label_3.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Span:</p></body></html>", None))
         self.length_label_4.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Span:</p></body></html>", None))
-        self.corner_logo.setText("")
         self.keysig_scale.setText(QCoreApplication.translate("MainWindow", u"major", None))
         self.keyboard_cat_label_2.setText("")
-        self.compose.setText(QCoreApplication.translate("MainWindow", u"Compose", None))
-        self.cats.setText(QCoreApplication.translate("MainWindow", u"cats", None))
+        self.lh_range2_header_label_2.setText(QCoreApplication.translate("MainWindow", u"Quarter", None))
+        self.lh_range2_header_label_3.setText(QCoreApplication.translate("MainWindow", u"1-100", None))
+        self.additional_fp_label.setText(QCoreApplication.translate("MainWindow", u"Extended Filepath", None))
         self.pdf.setText(QCoreApplication.translate("MainWindow", u".pdf", None))
+        self.extended_filepath.setText("")
+        self.extended_filepath.setPlaceholderText(QCoreApplication.translate("MainWindow", u"/output/", None))
         self.midi.setText(QCoreApplication.translate("MainWindow", u".midi", None))
-        self.whitefur_photo.setText("")
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Composer and professor Arthur &quot;Skip&quot; Whitefur has been composing masterpieces since his owner died in his sleep three days ago, and has quickly ascended the pinnacle of the art with now universally-acclaimed works such as <span style=\" font-style:italic;\">Crispy Does It </span>and <span style=\" font-style:italic;\">When I Shed</span>.<br/></p><p>Dr. Whitefur does not read his email, but you can usually find him working at the forge of his craft or in the bedroom sustaining himself on more of his owner's remains. And now let's finish with a few words from Dr Skip himself:<br/></p><p align=\"center\"><span style=\" font-style:italic;\">&quot;I hate other cats. They think they can eat my food, so I hiss and swat at them every time. I'll cut any of them who comes near my food&quot;</span></p><p align=\"center\">- Professor Arthur &quot;Skip&quot; Whitefur</p></body></html>", None))
-        self.corner_logo_2.setText("")
-        self.prompt_4.setText(QCoreApplication.translate("MainWindow", u"It's a cat", None))
-        self.prompt_3.setText(QCoreApplication.translate("MainWindow", u"Meet the Composer", None))
+        self.compose.setText(QCoreApplication.translate("MainWindow", u"Compose", None))
+        self.output_label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>/output/</p></body></html>", None))
+        self.name_label_1.setText(QCoreApplication.translate("MainWindow", u"new name", None))
+        self.cats.setText(QCoreApplication.translate("MainWindow", u"cats", None))
+        self.save_as.setText(QCoreApplication.translate("MainWindow", u"filepath/filename", None))
+        self.writing.setText(QCoreApplication.translate("MainWindow", u"Writing", None))
+        self.song_name.setText("")
+        self.song_name.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Name song", None))
+        self.corner_logo.setText("")
+        self.nav_configure.setText(QCoreApplication.translate("MainWindow", u"Configure", None))
+        self.nav_write.setText(QCoreApplication.translate("MainWindow", u"Write", None))
     # retranslateUi
 
