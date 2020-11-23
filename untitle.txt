@@ -1,0 +1,13 @@
+
+		# call composition constructor
+		Composition(self.song_name, int(self.measures), (int(self.timesig[0]), int(self.timesig[1])), self.assemble_key(), self.keysig_scale,
+			[self.lh_range1_lynotation, self.lh_range2_lynotation], [self.rh_range1_lynotation, self.rh_range2_lynotation], self.extended_filepath, self.pdf, self.midi)
+
+measures
+timesig
+key
+key_scale
+[lh ranges]
+[rh ranges]
+pdf
+midi

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1600</width>
+    <width>1589</width>
     <height>900</height>
    </rect>
   </property>
@@ -33,168 +33,6 @@
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QWidget" name="horizontalLayoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>60</x>
-       <y>390</y>
-       <width>191</width>
-       <height>54</height>
-      </rect>
-     </property>
-     <layout class="QHBoxLayout" name="key_sig_box">
-      <property name="spacing">
-       <number>0</number>
-      </property>
-      <property name="leftMargin">
-       <number>0</number>
-      </property>
-      <property name="rightMargin">
-       <number>0</number>
-      </property>
-      <item>
-       <widget class="QLabel" name="keysig_label">
-        <property name="font">
-         <font>
-          <pointsize>9</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(137, 137, 206);</string>
-        </property>
-        <property name="text">
-         <string>Key Signature:</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-        </property>
-        <property name="margin">
-         <number>6</number>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer name="keysig_spacer1">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>168</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
-       <widget class="QPushButton" name="keysig_note">
-        <property name="minimumSize">
-         <size>
-          <width>46</width>
-          <height>37</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>26</width>
-          <height>40</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>20</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-
-	border: 1px solid rgb(16, 24, 24);
-	border-radius: 4px;
-	background-color: rgb(16, 24, 24);
-	color: rgb(137, 137, 206);
-
-}
-
-QPushButton:hover {
-	background-color: rgb(24, 40, 40);
-}
-
-QPushButton:focus {
-	border: rgb(85, 170, 255);
-
-}
-</string>
-        </property>
-        <property name="text">
-         <string>A</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <layout class="QVBoxLayout" name="verticalLayout">
-        <item>
-         <widget class="QPushButton" name="keysig_acc">
-          <property name="minimumSize">
-           <size>
-            <width>26</width>
-            <height>24</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>26</width>
-            <height>40</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>14</pointsize>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton {
-
-	border: 1px solid rgb(16, 24, 24);
-	border-radius: 4px;
-	background-color: rgb(16, 24, 24);
-	color: rgb(137, 137, 206);
-
-}
-
-QPushButton:hover {
-	background-color: rgb(24, 40, 40);
-}
-
-QPushButton:focus {
-	border: rgb(85, 170, 255);
-}
-</string>
-          </property>
-          <property name="text">
-           <string>♮</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <spacer name="verticalSpacer">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeType">
-           <enum>QSizePolicy::Fixed</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-       </layout>
-      </item>
-     </layout>
-    </widget>
     <widget class="QWidget" name="verticalLayoutWidget_3">
      <property name="geometry">
       <rect>
@@ -284,151 +122,6 @@ QPushButton:focus {
          <number>0</number>
         </property>
        </widget>
-      </item>
-     </layout>
-    </widget>
-    <widget class="QWidget" name="horizontalLayoutWidget_3">
-     <property name="geometry">
-      <rect>
-       <x>50</x>
-       <y>290</y>
-       <width>171</width>
-       <height>91</height>
-      </rect>
-     </property>
-     <layout class="QHBoxLayout" name="time_sig_box">
-      <item>
-       <widget class="QLabel" name="time_sig_label">
-        <property name="font">
-         <font>
-          <pointsize>9</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(137, 137, 206);</string>
-        </property>
-        <property name="text">
-         <string>Time Signature:</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-        </property>
-        <property name="margin">
-         <number>6</number>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer name="horizontalSpacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>168</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
-       <layout class="QVBoxLayout" name="time_sig">
-        <item>
-         <widget class="QLineEdit" name="timesig_num">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>30</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>11</pointsize>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QLineEdit {
-	color: rgb(137, 137, 206);
-	border-radius: 4px
-}
-
-QLineEdit:hover {
-	background-color: rgb(24, 40, 40);
-}</string>
-          </property>
-          <property name="inputMask">
-           <string>00</string>
-          </property>
-          <property name="text">
-           <string>4</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="placeholderText">
-           <string/>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="Line" name="timesig_line">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>10</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>9</pointsize>
-           </font>
-          </property>
-          <property name="lineWidth">
-           <number>4</number>
-          </property>
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="timesig_den">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>30</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>11</pointsize>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QLineEdit {
-	color: rgb(137, 137, 206);
-	border-radius: 4px
-}
-
-QLineEdit:hover {
-	background-color: rgb(24, 40, 40);
-}</string>
-          </property>
-          <property name="inputMask">
-           <string>00</string>
-          </property>
-          <property name="text">
-           <string>4</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="placeholderText">
-           <string/>
-          </property>
-         </widget>
-        </item>
-       </layout>
       </item>
      </layout>
     </widget>
@@ -619,100 +312,6 @@ QLineEdit:hover {
      <property name="text">
       <string>-</string>
      </property>
-    </widget>
-    <widget class="QWidget" name="horizontalLayoutWidget_2">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>240</y>
-       <width>231</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <layout class="QHBoxLayout" name="horizontalLayout_3">
-      <item>
-       <widget class="QLabel" name="length_label">
-        <property name="minimumSize">
-         <size>
-          <width>140</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>120</width>
-          <height>30</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>9</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(137, 137, 206);</string>
-        </property>
-        <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Length in measures:&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
-        </property>
-        <property name="wordWrap">
-         <bool>true</bool>
-        </property>
-        <property name="margin">
-         <number>6</number>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="measures">
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>30</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>60</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>11</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLineEdit {
-	color: rgb(137, 137, 206);
-	border-radius: 4px
-}
-
-QLineEdit:hover {
-	background-color: rgb(24, 40, 40);
-}</string>
-        </property>
-        <property name="inputMask">
-         <string>000</string>
-        </property>
-        <property name="text">
-         <string>16</string>
-        </property>
-        <property name="maxLength">
-         <number>3</number>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-        <property name="placeholderText">
-         <string/>
-        </property>
-       </widget>
-      </item>
-     </layout>
     </widget>
     <widget class="QLabel" name="rh_range_label">
      <property name="geometry">
@@ -1028,23 +627,19 @@ QLineEdit:hover {
         </property>
         <property name="styleSheet">
          <string notr="true">QPushButton {
-	border: 2px solid rgb(67, 67, 100);
-	border-radius: 10px;
+	border-radius: 4px;
 	color: rgb(137, 137, 206);
-	padding-left: 10px;
-	padding-right: 10px;
+	padding-left: 4px;
+	padding-right: 4px;
 	
 	background-color: rgb(25, 40, 40);
 }
 
 QPushButton:hover {
-	border: 2px solid rgb(36, 36, 54);
+	border: 2px solid rgb(67, 67, 100);
 }
 
-QPushButton:focus {
-	border: rgb(85, 170, 255);
-	background-color: rgb(24, 40, 40);
-}
+
 
 QPushButton:checked {
 	color: rgb(25, 40, 40);
@@ -1086,28 +681,25 @@ QPushButton:disabled {
         </property>
         <property name="styleSheet">
          <string notr="true">QPushButton {
-	border: 2px solid rgb(67, 67, 100);
-	border-radius: 10px;
+	border-radius: 4px;
 	color: rgb(137, 137, 206);
-	padding-left: 10px;
-	padding-right: 10px;
+	padding-left: 4px;
+	padding-right: 4px;
 	
 	background-color: rgb(25, 40, 40);
 }
 
 QPushButton:hover {
-	border: 2px solid rgb(36, 36, 54);
+	border: 2px solid rgb(67, 67, 100);
 }
 
-QPushButton:focus {
-	border: rgb(85, 170, 255);
-	background-color: rgb(24, 40, 40);
-}
+
 
 QPushButton:checked {
 	color: rgb(25, 40, 40);
 	background-color: rgb(67, 67, 100);
 }
+
 QPushButton:disabled {
 	color: rgb(80, 80, 126);
 	border: rgb(85, 170, 255);
@@ -1280,55 +872,6 @@ QPushButton:disabled {
       <number>6</number>
      </property>
     </widget>
-    <widget class="QPushButton" name="keysig_scale">
-     <property name="geometry">
-      <rect>
-       <x>230</x>
-       <y>420</y>
-       <width>120</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>120</width>
-       <height>20</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>26</width>
-       <height>30</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton {
-
-	border: 1px solid rgb(16, 24, 24);
-	border-radius: 4px;
-	background-color: rgb(16, 24, 24);
-	color: rgb(137, 137, 206);
-
-}
-
-QPushButton:hover {
-	background-color: rgb(24, 40, 40);
-}
-
-QPushButton:focus {
-	border: rgb(85, 170, 255);
-}
-</string>
-     </property>
-     <property name="text">
-      <string>major</string>
-     </property>
-    </widget>
     <widget class="QFrame" name="keyboard_cat">
      <property name="geometry">
       <rect>
@@ -1367,77 +910,787 @@ QPushButton:focus {
       </property>
      </widget>
     </widget>
-    <widget class="QSlider" name="horizontalSlider">
+    <widget class="QWidget" name="quarter_note_weight" native="true">
      <property name="geometry">
       <rect>
-       <x>800</x>
-       <y>290</y>
+       <x>570</x>
+       <y>180</y>
+       <width>251</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <widget class="QLabel" name="lh_range2_header_label_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>40</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color:rgb(137, 137, 206)
+	
+}</string>
+      </property>
+      <property name="text">
+       <string>Quarter Icon</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lh_range2_header_label_3">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>10</y>
+        <width>61</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color:rgb(137, 137, 206)
+	
+}</string>
+      </property>
+      <property name="text">
+       <string>1-100</string>
+      </property>
+     </widget>
+     <widget class="QSlider" name="horizontalSlider">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>40</y>
+        <width>211</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="half_weight_widget" native="true">
+     <property name="geometry">
+      <rect>
+       <x>570</x>
+       <y>120</y>
+       <width>251</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <widget class="QLabel" name="half_weight_label">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>40</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color:rgb(137, 137, 206)
+	
+}</string>
+      </property>
+      <property name="text">
+       <string>Half Icon</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="half_weight_value">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>10</y>
+        <width>61</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color:rgb(137, 137, 206)
+	
+}</string>
+      </property>
+      <property name="text">
+       <string>1-100</string>
+      </property>
+     </widget>
+     <widget class="QSlider" name="half_weight_slider">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>40</y>
+        <width>211</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="verticalLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>20</y>
+       <width>101</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="save_load">
+      <property name="spacing">
+       <number>2</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="save">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>400</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+	border-radius: 4px;
+	color: rgb(137, 137, 206);
+	padding-left: 4px;
+	padding-right: 4px;
+	
+	background-color: rgb(25, 40, 40);
+}
+
+QPushButton:hover {
+	border: 2px solid rgb(67, 67, 100);
+
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Save</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="load">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>400</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+	border-radius: 4px;
+	color: rgb(137, 137, 206);
+	padding-left: 4px;
+	padding-right: 4px;
+	
+	background-color: rgb(25, 40, 40);
+}
+
+QPushButton:hover {
+	border: 2px solid rgb(67, 67, 100);
+
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Load</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>160</y>
+       <width>28</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="time_sig">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QLineEdit" name="timesig_num">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>26</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+	color: rgb(137, 137, 206);
+	border-radius: 4px
+}
+
+QLineEdit:hover {
+	background-color: rgb(24, 40, 40);
+}</string>
+        </property>
+        <property name="inputMask">
+         <string>00</string>
+        </property>
+        <property name="text">
+         <string>4</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="placeholderText">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="Line" name="timesig_line">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>10</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Plain</enum>
+        </property>
+        <property name="lineWidth">
+         <number>2</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="timesig_den">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>26</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+	color: rgb(137, 137, 206);
+	border-radius: 4px
+}
+
+QLineEdit:hover {
+	background-color: rgb(24, 40, 40);
+}</string>
+        </property>
+        <property name="inputMask">
+         <string>00</string>
+        </property>
+        <property name="text">
+         <string>4</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="placeholderText">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QLabel" name="time_sig_label">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>180</y>
+       <width>140</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>140</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>140</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(137, 137, 206);</string>
+     </property>
+     <property name="text">
+      <string>Time Signature:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
+     </property>
+     <property name="margin">
+      <number>6</number>
+     </property>
+    </widget>
+    <widget class="QLabel" name="length_label">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>130</y>
+       <width>140</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>140</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>140</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(137, 137, 206);</string>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Length in measures:&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+     <property name="margin">
+      <number>6</number>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="measures">
+     <property name="geometry">
+      <rect>
+       <x>204</x>
+       <y>128</y>
+       <width>40</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>50</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit {
+	color: rgb(137, 137, 206);
+	border-radius: 4px
+}
+
+QLineEdit:hover {
+	background-color: rgb(24, 40, 40);
+}</string>
+     </property>
+     <property name="inputMask">
+      <string>000</string>
+     </property>
+     <property name="text">
+      <string>16</string>
+     </property>
+     <property name="maxLength">
+      <number>3</number>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="placeholderText">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="time_sig_label_2">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>250</y>
+       <width>140</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>140</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>140</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(137, 137, 206);</string>
+     </property>
+     <property name="text">
+      <string>Key Signature:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
+     </property>
+     <property name="margin">
+      <number>6</number>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="keysig_note">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>240</y>
+       <width>50</width>
+       <height>52</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>50</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QComboBox {
+
+	border: 1px solid rgb(16, 24, 24);
+	border-radius: 4px;
+	background-color: rgb(16, 24, 24);
+	color: rgb(137, 137, 206);
+
+}
+
+QComboBox:hover {
+	background-color: rgb(24, 40, 40);
+}
+
+QComboBox:focus {
+	border: rgb(85, 170, 255);
+}
+</string>
+     </property>
+     <item>
+      <property name="text">
+       <string>A</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>B</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>C</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>D</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>E</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>F</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>G</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QComboBox" name="keysig_acc">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>240</y>
+       <width>40</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>25</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>40</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QComboBox {
+
+	border: 1px solid rgb(16, 24, 24);
+	border-radius: 4px;
+	background-color: rgb(16, 24, 24);
+	color: rgb(137, 137, 206);
+
+}
+
+QComboBox:hover {
+	background-color: rgb(24, 40, 40);
+}
+
+QComboBox:focus {
+	border: rgb(85, 170, 255);
+}
+</string>
+     </property>
+     <item>
+      <property name="text">
+       <string>♮</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>♯</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>♭</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QComboBox" name="keysig_scale">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>264</y>
+       <width>100</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>60</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QComboBox {
+
+	border: 1px solid rgb(16, 24, 24);
+	border-radius: 4px;
+	background-color: rgb(16, 24, 24);
+	color: rgb(137, 137, 206);
+
+}
+
+QComboBox:hover {
+	background-color: rgb(24, 40, 40);
+}
+
+QComboBox:focus {
+	border: rgb(85, 170, 255);
+}
+</string>
+     </property>
+     <item>
+      <property name="text">
+       <string>major</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>minor</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>harmonic</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>melodic</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>20</y>
        <width>211</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
-    <widget class="QLabel" name="lh_range2_header_label_2">
-     <property name="geometry">
-      <rect>
-       <x>800</x>
-       <y>260</y>
-       <width>61</width>
-       <height>26</height>
+       <height>61</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>9</pointsize>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">QLabel {
-	color:rgb(137, 137, 206)
-	
+      <string notr="true">QLineEdit {
+	color:rgb(137, 137, 206);
+	border: 0px;
 }</string>
      </property>
-     <property name="text">
-      <string>Quarter</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="lh_range2_header_label_3">
-     <property name="geometry">
-      <rect>
-       <x>950</x>
-       <y>260</y>
-       <width>61</width>
-       <height>26</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>9</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QLabel {
-	color:rgb(137, 137, 206)
-	
-}</string>
-     </property>
-     <property name="text">
-      <string>1-100</string>
+     <property name="placeholderText">
+      <string>Unnamed Configuration</string>
      </property>
     </widget>
     <zorder>keyboard_cat</zorder>
-    <zorder>horizontalLayoutWidget</zorder>
     <zorder>verticalLayoutWidget_3</zorder>
-    <zorder>horizontalLayoutWidget_3</zorder>
     <zorder>lh_range_label</zorder>
     <zorder>verticalLayoutWidget_4</zorder>
     <zorder>lh_range1_header_label</zorder>
     <zorder>dash</zorder>
     <zorder>lh_range2_header_label</zorder>
-    <zorder>horizontalLayoutWidget_2</zorder>
     <zorder>rh_range_label</zorder>
     <zorder>rh_range2_header_label</zorder>
     <zorder>rh_range1_header_label</zorder>
@@ -1450,481 +1703,18 @@ QPushButton:focus {
     <zorder>rh_span</zorder>
     <zorder>length_label_3</zorder>
     <zorder>length_label_4</zorder>
+    <zorder>quarter_note_weight</zorder>
+    <zorder>half_weight_widget</zorder>
+    <zorder>verticalLayoutWidget</zorder>
+    <zorder></zorder>
+    <zorder>time_sig_label</zorder>
+    <zorder>length_label</zorder>
+    <zorder>measures</zorder>
+    <zorder>time_sig_label_2</zorder>
+    <zorder>keysig_note</zorder>
+    <zorder>keysig_acc</zorder>
     <zorder>keysig_scale</zorder>
-    <zorder>horizontalSlider</zorder>
-    <zorder>lh_range2_header_label_2</zorder>
-    <zorder>lh_range2_header_label_3</zorder>
-   </widget>
-   <widget class="QFrame" name="write">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>80</y>
-      <width>1600</width>
-      <height>820</height>
-     </rect>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
-    <widget class="QTreeView" name="output_tree">
-     <property name="geometry">
-      <rect>
-       <x>510</x>
-       <y>290</y>
-       <width>431</width>
-       <height>281</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QTreeView {
-	color: rgb(137, 137, 206);
-	background-color: rgb(25, 40, 40);
-}</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="additional_fp_label">
-     <property name="geometry">
-      <rect>
-       <x>660</x>
-       <y>180</y>
-       <width>131</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>30</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>9</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(137, 137, 206);</string>
-     </property>
-     <property name="text">
-      <string>Extended Filepath</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-     <property name="margin">
-      <number>6</number>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="pdf">
-     <property name="geometry">
-      <rect>
-       <x>510</x>
-       <y>620</y>
-       <width>111</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QCheckBox {
-	border: 2px solid rgb(67, 67, 100);
-	border-radius: 10px;
-	color: rgb(137, 137, 206);
-	padding-left: 10px;
-	padding-right: 10px;
-	
-	background-color: rgb(25, 40, 40);
-}
-
-QCheckBox:hover {
-	border: 2px solid rgb(36, 36, 54);
-}
-
-QCheckBox:focus {
-	border: rgb(85, 170, 255);
-	background-color: rgb(24, 40, 40);
-}
-
-</string>
-     </property>
-     <property name="text">
-      <string>.pdf</string>
-     </property>
-     <property name="checkable">
-      <bool>true</bool>
-     </property>
-     <property name="checked">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="extended_filepath">
-     <property name="geometry">
-      <rect>
-       <x>660</x>
-       <y>220</y>
-       <width>281</width>
-       <height>40</height>
-      </rect>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>240</width>
-       <height>40</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <family>Rasa</family>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QLineEdit {
-	border: 2px solid rgb(67, 67, 100);
-	border-radius: 10px;
-	color: rgb(137, 137, 206);
-	padding-left: 10px;
-	padding-right: 10px;
-	
-	background-color: rgb(25, 40, 40);
-}
-
-QLineEdit:hover {
-	border: 2px solid rgb(36, 36, 54);
-}
-
-QLineEdit:focus {
-	border: rgb(85, 170, 255);
-	background-color: rgb(24, 40, 40);
-}</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="cursorPosition">
-      <number>0</number>
-     </property>
-     <property name="placeholderText">
-      <string>/output/</string>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="midi">
-     <property name="geometry">
-      <rect>
-       <x>510</x>
-       <y>660</y>
-       <width>111</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QCheckBox {
-	border: 2px solid rgb(67, 67, 100);
-	border-radius: 10px;
-	color: rgb(137, 137, 206);
-	padding-left: 10px;
-	padding-right: 10px;
-	
-	background-color: rgb(25, 40, 40);
-}
-
-QCheckBox:hover {
-	border: 2px solid rgb(36, 36, 54);
-}
-
-QCheckBox:focus {
-	border: rgb(85, 170, 255);
-	background-color: rgb(24, 40, 40);
-}
-
-</string>
-     </property>
-     <property name="text">
-      <string>.midi</string>
-     </property>
-     <property name="checked">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="compose">
-     <property name="geometry">
-      <rect>
-       <x>510</x>
-       <y>740</y>
-       <width>400</width>
-       <height>40</height>
-      </rect>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>40</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>400</width>
-       <height>16777215</height>
-      </size>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton {
-	border: 2px solid rgb(67, 67, 100);
-	border-radius: 10px;
-	color: rgb(137, 137, 206);
-	padding-left: 10px;
-	padding-right: 10px;
-	
-	background-color: rgb(25, 40, 40);
-}
-
-QPushButton:hover {
-	border: 2px solid rgb(36, 36, 54);
-}
-
-QPushButton:focus {
-	border: rgb(85, 170, 255);
-	background-color: rgb(24, 40, 40);
-}
-
-</string>
-     </property>
-     <property name="text">
-      <string>Compose</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="output_label">
-     <property name="geometry">
-      <rect>
-       <x>500</x>
-       <y>260</y>
-       <width>71</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>60</width>
-       <height>0</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>120</width>
-       <height>30</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>9</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(137, 137, 206);</string>
-     </property>
-     <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;/output/&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
-     </property>
-     <property name="wordWrap">
-      <bool>true</bool>
-     </property>
-     <property name="margin">
-      <number>6</number>
-     </property>
-    </widget>
-    <widget class="QLabel" name="name_label_1">
-     <property name="geometry">
-      <rect>
-       <x>310</x>
-       <y>590</y>
-       <width>171</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>30</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(137, 137, 206);</string>
-     </property>
-     <property name="text">
-      <string>new name</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-     </property>
-     <property name="margin">
-      <number>6</number>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="cats">
-     <property name="geometry">
-      <rect>
-       <x>510</x>
-       <y>700</y>
-       <width>121</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QCheckBox {
-	border: 2px solid rgb(67, 67, 100);
-	border-radius: 10px;
-	color: rgb(137, 137, 206);
-	padding-left: 10px;
-	padding-right: 10px;
-	
-	background-color: rgb(25, 40, 40);
-}
-
-QCheckBox:hover {
-	border: 2px solid rgb(36, 36, 54);
-}
-
-QCheckBox:focus {
-	border: rgb(85, 170, 255);
-	background-color: rgb(24, 40, 40);
-}
-
-</string>
-     </property>
-     <property name="text">
-      <string>cats</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="save_as">
-     <property name="geometry">
-      <rect>
-       <x>510</x>
-       <y>580</y>
-       <width>241</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>30</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>9</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(137, 137, 206);</string>
-     </property>
-     <property name="text">
-      <string>filepath/filename</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-     </property>
-     <property name="margin">
-      <number>6</number>
-     </property>
-    </widget>
-    <widget class="QLabel" name="writing">
-     <property name="geometry">
-      <rect>
-       <x>230</x>
-       <y>590</y>
-       <width>81</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>30</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(137, 137, 206);</string>
-     </property>
-     <property name="text">
-      <string>Writing</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
-     <property name="margin">
-      <number>6</number>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="song_name">
-     <property name="geometry">
-      <rect>
-       <x>510</x>
-       <y>120</y>
-       <width>293</width>
-       <height>44</height>
-      </rect>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>240</width>
-       <height>44</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <family>Rasa</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QLineEdit {
-	border: 2px solid rgb(67, 67, 100);
-	border-radius: 10px;
-	color: rgb(137, 137, 206);
-	padding-left: 10px;
-	padding-right: 10px;
-	
-	background-color: rgb(25, 40, 40);
-}
-
-QLineEdit:hover {
-	border: 2px solid rgb(36, 36, 54);
-}
-
-QLineEdit:focus {
-	border: rgb(85, 170, 255);
-	background-color: rgb(24, 40, 40);
-}
-
-</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="cursorPosition">
-      <number>0</number>
-     </property>
-     <property name="placeholderText">
-      <string>Name song</string>
-     </property>
-    </widget>
+    <zorder>lineEdit</zorder>
    </widget>
    <widget class="QFrame" name="top_bar">
     <property name="geometry">
@@ -1934,6 +1724,11 @@ QLineEdit:focus {
       <width>1600</width>
       <height>80</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QFrame {
+	border:2px
+}</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -2087,9 +1882,352 @@ QPushButton:checked {
      </layout>
     </widget>
    </widget>
-   <zorder>write</zorder>
+   <widget class="QFrame" name="write">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>80</y>
+      <width>1600</width>
+      <height>820</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QCheckBox" name="pdf">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>340</y>
+       <width>100</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QCheckBox {
+	border: 2px solid rgb(67, 67, 100);
+	border-radius: 10px;
+	color: rgb(137, 137, 206);
+	padding-left: 10px;
+	padding-right: 10px;
+	
+	background-color: rgb(25, 40, 40);
+}
+
+QCheckBox:hover {
+	border: 2px solid rgb(36, 36, 54);
+}
+
+QCheckBox:focus {
+	border: rgb(85, 170, 255);
+	background-color: rgb(24, 40, 40);
+}
+
+</string>
+     </property>
+     <property name="text">
+      <string>.pdf</string>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="midi">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>380</y>
+       <width>100</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QCheckBox {
+	border: 2px solid rgb(67, 67, 100);
+	border-radius: 10px;
+	color: rgb(137, 137, 206);
+	padding-left: 10px;
+	padding-right: 10px;
+	
+	background-color: rgb(25, 40, 40);
+}
+
+QCheckBox:hover {
+	border: 2px solid rgb(36, 36, 54);
+}
+
+QCheckBox:focus {
+	border: rgb(85, 170, 255);
+	background-color: rgb(24, 40, 40);
+}
+
+</string>
+     </property>
+     <property name="text">
+      <string>.midi</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="compose">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>480</y>
+       <width>300</width>
+       <height>40</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>40</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>400</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	border: 2px solid rgb(67, 67, 100);
+	border-radius: 10px;
+	color: rgb(137, 137, 206);
+	padding-left: 10px;
+	padding-right: 10px;
+	
+	background-color: rgb(25, 40, 40);
+}
+
+QPushButton:hover {
+	border: 2px solid rgb(36, 36, 54);
+}
+
+QPushButton:focus {
+	border: rgb(85, 170, 255);
+	background-color: rgb(24, 40, 40);
+}
+
+</string>
+     </property>
+     <property name="text">
+      <string>Compose</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="song_filename_label">
+     <property name="geometry">
+      <rect>
+       <x>520</x>
+       <y>280</y>
+       <width>561</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(137, 137, 206);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+     <property name="margin">
+      <number>6</number>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="cats">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>420</y>
+       <width>100</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QCheckBox {
+	border: 2px solid rgb(67, 67, 100);
+	border-radius: 10px;
+	color: rgb(137, 137, 206);
+	padding-left: 10px;
+	padding-right: 10px;
+	
+	background-color: rgb(25, 40, 40);
+}
+
+QCheckBox:hover {
+	border: 2px solid rgb(36, 36, 54);
+}
+
+QCheckBox:focus {
+	border: rgb(85, 170, 255);
+	background-color: rgb(24, 40, 40);
+}
+
+</string>
+     </property>
+     <property name="text">
+      <string>cats</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="song_name">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>150</y>
+       <width>300</width>
+       <height>44</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>240</width>
+       <height>44</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>Rasa</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit {
+	border: 2px solid rgb(67, 67, 100);
+	border-radius: 10px;
+	color: rgb(137, 137, 206);
+	padding-left: 10px;
+	padding-right: 10px;
+	
+	background-color: rgb(25, 40, 40);
+}
+
+QLineEdit:hover {
+	border: 2px solid rgb(36, 36, 54);
+}
+
+QLineEdit:focus {
+	border: rgb(85, 170, 255);
+	background-color: rgb(24, 40, 40);
+}
+
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="cursorPosition">
+      <number>0</number>
+     </property>
+     <property name="placeholderText">
+      <string>Name song</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="song_folder">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>210</y>
+       <width>300</width>
+       <height>40</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>40</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>400</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	border: 2px solid rgb(67, 67, 100);
+	border-radius: 10px;
+	color: rgb(137, 137, 206);
+	padding-left: 10px;
+	padding-right: 10px;
+	
+	background-color: rgb(25, 40, 40);
+}
+
+QPushButton:hover {
+	border: 2px solid rgb(36, 36, 54);
+}
+
+QPushButton:focus {
+	border: rgb(85, 170, 255);
+	background-color: rgb(24, 40, 40);
+}
+
+</string>
+     </property>
+     <property name="text">
+      <string>Select Folder</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="writing">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>280</y>
+       <width>74</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(137, 137, 206);</string>
+     </property>
+     <property name="text">
+      <string>Writing:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+     <property name="margin">
+      <number>6</number>
+     </property>
+    </widget>
+   </widget>
    <zorder>top_bar</zorder>
    <zorder>configure</zorder>
+   <zorder>write</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

@@ -39,27 +39,17 @@ LY_BLOCK_3 = """
 """
 
 
-
-
-# ALL USER INPUT comes into this constructor
+# Builds music from user input and writes files
 # constructor calls Rhythm and Notation constructors with user input
-# holds methods for converting Notation object to content string for the Studio class to write to file
+# Argument rules: dict of data converted from Studio obj's configuration attribute to be Composition-ready
+
 class Composition:
-	def __init__(self, name, measures, timesig, key, key_scale, left_limits, right_limits, extended_filepath, pdf, midi):
+	def __init__(self, rules):
+		self.__dict__.update(rules)
 
-		self.name = name
-		self.filename = name.replace(" ", "_") + ".ly"
-		self.rhythm = durationsre.Rhythm(measures, timesig)
+		self.rhythm = rhythms.Rhythm(self.measures, self.timesig)
+		self.notation = pitchesre.Notation(self.key, self.key_scale, self.left_limits, self.right_limits, self.rhythm, None, 1, None)
 
-		self.filepath = "output/" + extended_filepath
-		self.pdf = pdf
-		self.midi = midi
-
-		self.notation = pitchesre.Notation(key, key_scale, left_limits, right_limits, self.rhythm, None, 1, None)
-
-
-
-#	def __init__(self, key, key_scale, left_limits, right_limits, rhythm, accidental_freq, rest_freq, anchor_strength):
 		self.write_ly(self.lywrite_content())
 
 
@@ -92,6 +82,7 @@ class Composition:
 
 	def write_ly(self, content):
 		try:
+			log_debug(f"{os.getcwd()}")
 			os.mkdir(self.filepath)
 		except FileExistsError:
 			pass
