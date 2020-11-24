@@ -10,7 +10,7 @@ import os
 import pickle
 import time
 
-
+# These mirror ComboBox item sets and are used by update keysig methods
 NOTES = ["A", "B", "C", "D", "E", "F", "G"]
 ACCIDENTALS = ["♮", "♯", "♭"]
 SCALES = ["major", "minor", "harmonic", "melodic"]
@@ -24,7 +24,6 @@ class Studio(QMainWindow):
 
 		self.configuration = {} # always represents active ui
 		self.init_user_input_vars()
-
 		self.init_ui()
 
 	def init_ui(self):
@@ -50,12 +49,10 @@ class Studio(QMainWindow):
 		self.ui.nav_group.buttonClicked.connect(self.navigate)
 
 		self.ui.save.clicked.connect(self.save_configuration)
-
+		self.ui.load.clicked.connect(self.load_configuration)
 
 		# Configure
 		self.ui.measures.textEdited.connect(self.update_measures)
-
-
 
 		self.ui.timesig_num.textEdited.connect(self.update_timesig)
 		self.ui.timesig_den.textEdited.connect(self.update_timesig)
@@ -82,13 +79,9 @@ class Studio(QMainWindow):
 
 
 	def init_user_input_vars(self):
-		# So called user input vars are Studio level variables reflecting the current state of ui input widgets
+		# User input vars are Studio level variables reflecting the current state of ui input widgets
 		self.song_name = "<unnamed>"
 		self.song_folder = os.getcwd()+"/output"
-		# cycling inputs starting back one because update will do a cycle
-		self.keysig_note_index = 1
-		self.keysig_acc_index = 3
-		self.keysig_scale_index = len(SCALES)-1 # allows adding more scale patterns later
 
 		self.ranges_mode = "♯"
 		self.ui.lh_range1_slider.setSliderPosition(0)
@@ -98,7 +91,7 @@ class Studio(QMainWindow):
 		self.configuration["rh_range2"] = self.ui.rh_range2_slider.value()
 		self.configuration["lh_range2"] = self.ui.lh_range2_slider.value()
 
-		self.update_all_ranges()
+		self.update_all()
 
 	# prepares self.configuration values to be passed to Composition constructor
 	# returns rules dict
@@ -115,7 +108,7 @@ class Studio(QMainWindow):
 		rules['midi'] = self.configuration['midi']
 
 	# runs every update method
-	def update_ui(self):
+	def update_all(self):
 		self.update_measures()
 		self.update_timesig()
 		self.update_keysig_note()
@@ -123,7 +116,6 @@ class Studio(QMainWindow):
 		self.update_keysig_scale()
 		self.update_song_name()
 		self.update_all_ranges()
-		self.update_extended_filepath()
 		self.update_pdf()
 		self.update_midi()
 
@@ -141,12 +133,13 @@ class Studio(QMainWindow):
 		self.configuration['song_name'] = self.ui.song_name.text()
 
 	def update_measures(self):
-		self.configuration['measures'] = int(self.ui.measures.text())
+		if self.ui.measures.text():
+			self.configuration['measures'] = int(self.ui.measures.text())
 
 	def update_timesig(self):
-		self.configuration['timesig']= (int(self.ui.timesig_num.text()), int(self.ui.timesig_den.text()))
+		if self.ui.timesig_num.text() and self.ui.timesig_den.text(): # for when user clears field
+			self.configuration['timesig'] = (int(self.ui.timesig_num.text()), int(self.ui.timesig_den.text()))
 		
-#	def __init__(self, name, measures, timesig, key, key_scale, left_limits, right_limits, extended_filepath, pdf, midi):
 	def update_keysig_note(self):   # change to cycler
 		self.configuration["keysig_note"] = self.ui.keysig_note.currentText()
 
@@ -163,7 +156,7 @@ class Studio(QMainWindow):
 			self.ui.sharp_ranges.setEnabled(False)
 			self.ui.flat_ranges.setEnabled(False)
 			self.update_all_ranges()
-		elif self.keysig_acc == "♭":
+		elif self.configuration["keysig_acc"] == "♭":
 			self.ranges_mode = "♭"
 			self.ui.flat_ranges.setChecked(True)
 			self.ui.sharp_ranges.setEnabled(False)
@@ -264,11 +257,6 @@ class Studio(QMainWindow):
 		self.rh_span = self.configuration["rh_range2"] - self.configuration["rh_range1"]
 		self.ui.rh_span.setText(str(abs(self.rh_span)))
 
-	# def update_extended_filepath(self):
-	# 	self.extended_filepath = self.ui.extended_filepath.text()
-	# 	if self.extended_filepath:
-	# 		self.extended_filepath += "/"
-
 	def update_pdf(self):
 		self.configuration["pdf"] = self.ui.pdf.isChecked()
 
@@ -305,63 +293,114 @@ class Studio(QMainWindow):
 		else:
 			return self.keysig_note.lower()
 
+
+	# Configurations
 	def save_configuration(self):
 
 		if configuration_filename := self._save_configuration_dialog():
-			self._write_config(configuration_filename)
+			self._write_configuration(configuration_filename)
 
-	def _write_config(self, configuration_filename):
+	def _write_configuration(self, configuration_filename):
 		log_debug(f"pickle time")
 		pickle.dump(self.configuration, open(configuration_filename, 'wb'))
 
-	# return fp
+	# returns full filename
 	def _save_configuration_dialog(self):
-		self.fp = ""
+		self.filename = ""
 		self.ui.save_dialog = QFileDialog(self)
-		self.ui.save_dialog.setOption(QFileDialog.ReadOnly, True) # not working
 		self.ui.save_dialog.setAcceptMode(QFileDialog.AcceptSave)
 		self.ui.save_dialog.setDirectory(os.getcwd()+'/configurations')
 		self.ui.save_dialog.setFilter(QDir.Dirs) #idk what it does
 		if self.ui.save_dialog.exec_():
 
-			files = self.ui.save_dialog.selectedFiles()
-			selected = self.ui.save_dialog.selectedUrls()
-			directory = self.ui.save_dialog.directory()
+			_file = self.ui.save_dialog.selectedFiles()[0].split("/")[-1]
+			_directory = self.ui.save_dialog.directory().path()
+			log_debug(f"_file: {_file}")
+			log_debug(f"_directory {_directory}")
+			
+			filename = f"{_directory}/{_file}"
 
-			_directory = directory.path()
-			_file = files[0].split("/")[-1]
+			if filename[-3:] != ".cf":
+				filename += ".cf"
 
-			print(_file)
-			print(_directory)
+			return filename
 
-			fp = f"{_directory}/{_file}.cf"
+	def load_configuration(self):
+		if configuration_filename := self._load_configuration_dialog():
 
-			return fp
+			self.configuration = pickle.load(open(configuration_filename, "rb"))
+			log_debug(self.configuration)
+			self.apply_configuration()
+			
+	def _load_configuration_dialog(self):
+		self.ui.load_configuration_dialog = QFileDialog(self)
+		self.ui.load_configuration_dialog.setAcceptMode(QFileDialog.AcceptOpen)
+		# I don't know why this setDirectory does nothing
+		self.ui.load_configuration_dialog.setDirectory(QDir(os.getcwd()+'/configurations'))
+		# Get a filter if possible because input needs to be valid
 
+		if self.ui.load_configuration_dialog.exec_():
+			_file = self.ui.load_configuration_dialog.selectedFiles()[0].split("/")[-1]
+			_directory = self.ui.load_configuration_dialog.directory().path()
+			log_debug(f"_file: {_file}", source="(_load_configuration_dialog)")
+			log_debug(f"_directory: {_directory}", source="(_load_configuration_dialog)")
+			
+			return f"{_directory}/{_file}"
+
+	def apply_configuration(self):
+		print('applying config')
+		self.ui.measures.setText(str(self.configuration['measures']))
+		self.ui.timesig_num.setText(str(self.configuration['timesig'][0]))
+		self.ui.timesig_den.setText(str(self.configuration['timesig'][1]))
+
+		# combobox inputs need to convert back to related index from stored string value
+		self.ui.keysig_note.setCurrentIndex(self.index_from_note(self.configuration["keysig_note"]))
+		self.ui.keysig_acc.setCurrentIndex(self.index_from_acc(self.configuration["keysig_acc"]))
+		self.ui.keysig_scale.setCurrentIndex(self.index_from_scale(self.configuration["keysig_scale"]))
+
+		self.ui.rh_range1_slider.setSliderPosition(self.configuration["rh_range1"])
+		self.ui.rh_range2_slider.setSliderPosition(self.configuration["rh_range2"])
+		self.ui.lh_range1_slider.setSliderPosition(self.configuration["lh_range1"])
+		self.ui.lh_range2_slider.setSliderPosition(self.configuration["lh_range2"])
+
+		self.update_all() # probably the way to do it 
+
+	def index_from_note(self, note):
+		for i in range(len(NOTES)):
+			if NOTES[i] == note:
+				return i
+
+	def index_from_acc(self, acc):
+		for i in range(len(ACCIDENTALS)):
+			if ACCIDENTALS[i] == acc:
+				return i
+
+	def index_from_scale(self, scale):
+		for i in range(len(SCALES)):
+			if SCALES[i] == scale:
+				return i
+
+	# Songs
 	def select_song_folder(self):
 		directory = ""
 		self.ui.select_folder_dialog = QFileDialog(self)
 		self.ui.select_folder_dialog.setAcceptMode(QFileDialog.AcceptSave)
 		self.ui.select_folder_dialog.setFileMode(QFileDialog.Directory)
 		self.ui.select_folder_dialog.setDirectory(QDir(os.getcwd()+'/output'))
-		if 	self.ui.select_folder_dialog.exec_():
 
+		if 	self.ui.select_folder_dialog.exec_():
 			directory = self.ui.select_folder_dialog.selectedFiles()[0]
+			print(directory)
 			direct = QDir(os.getcwd()).relativeFilePath(directory)
 			self.song_folder = direct
 			self.update_song_filename()
 
 	def update_song_filename(self):
+		print(self.song_filename())
 		self.ui.song_filename_label.setText(self.song_filename())
 
 	def song_filename(self):
 		return f"{self.song_folder}/{self.song_name}.ly"
-
-	def load_configuration(self):
-		if configuration_filename := self._load_dialog():
-			self.configuration = pickle.load(configuration_filename)
-			self.update_ui()
-
 
 app = QApplication(sys.argv)
 app_window = Studio()

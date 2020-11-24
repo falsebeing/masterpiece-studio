@@ -521,14 +521,14 @@ class Ui_MainWindow(object):
 
         self.save_load.addWidget(self.load)
 
-        self.widget = QWidget(self.configure)
-        self.widget.setObjectName(u"widget")
-        self.widget.setGeometry(QRect(210, 160, 28, 71))
-        self.time_sig = QVBoxLayout(self.widget)
+        self.layoutWidget = QWidget(self.configure)
+        self.layoutWidget.setObjectName(u"layoutWidget")
+        self.layoutWidget.setGeometry(QRect(210, 160, 28, 71))
+        self.time_sig = QVBoxLayout(self.layoutWidget)
         self.time_sig.setSpacing(0)
         self.time_sig.setObjectName(u"time_sig")
         self.time_sig.setContentsMargins(0, 0, 0, 0)
-        self.timesig_num = QLineEdit(self.widget)
+        self.timesig_num = QLineEdit(self.layoutWidget)
         self.timesig_num.setObjectName(u"timesig_num")
         self.timesig_num.setMinimumSize(QSize(0, 26))
         self.timesig_num.setFont(font)
@@ -544,7 +544,7 @@ class Ui_MainWindow(object):
 
         self.time_sig.addWidget(self.timesig_num)
 
-        self.timesig_line = QFrame(self.widget)
+        self.timesig_line = QFrame(self.layoutWidget)
         self.timesig_line.setObjectName(u"timesig_line")
         self.timesig_line.setMinimumSize(QSize(0, 10))
         self.timesig_line.setFont(font)
@@ -554,7 +554,7 @@ class Ui_MainWindow(object):
 
         self.time_sig.addWidget(self.timesig_line)
 
-        self.timesig_den = QLineEdit(self.widget)
+        self.timesig_den = QLineEdit(self.layoutWidget)
         self.timesig_den.setObjectName(u"timesig_den")
         self.timesig_den.setMinimumSize(QSize(0, 26))
         self.timesig_den.setFont(font)
@@ -713,13 +713,13 @@ class Ui_MainWindow(object):
 "	border: rgb(85, 170, 255);\n"
 "}\n"
 "")
-        self.lineEdit = QLineEdit(self.configure)
-        self.lineEdit.setObjectName(u"lineEdit")
-        self.lineEdit.setGeometry(QRect(30, 20, 211, 61))
+        self.configuration_name = QLineEdit(self.configure)
+        self.configuration_name.setObjectName(u"configuration_name")
+        self.configuration_name.setGeometry(QRect(50, 20, 211, 61))
         font4 = QFont()
         font4.setPointSize(12)
-        self.lineEdit.setFont(font4)
-        self.lineEdit.setStyleSheet(u"QLineEdit {\n"
+        self.configuration_name.setFont(font4)
+        self.configuration_name.setStyleSheet(u"QLineEdit {\n"
 "	color:rgb(137, 137, 206);\n"
 "	border: 0px;\n"
 "}")
@@ -745,7 +745,7 @@ class Ui_MainWindow(object):
         self.quarter_note_weight.raise_()
         self.half_weight_widget.raise_()
         self.verticalLayoutWidget.raise_()
-        self.widget.raise_()
+        self.layoutWidget.raise_()
         self.time_sig_label.raise_()
         self.length_label.raise_()
         self.measures.raise_()
@@ -753,7 +753,7 @@ class Ui_MainWindow(object):
         self.keysig_note.raise_()
         self.keysig_acc.raise_()
         self.keysig_scale.raise_()
-        self.lineEdit.raise_()
+        self.configuration_name.raise_()
         self.top_bar = QFrame(self.centralwidget)
         self.top_bar.setObjectName(u"top_bar")
         self.top_bar.setGeometry(QRect(0, 0, 1600, 80))
@@ -1017,8 +1017,8 @@ class Ui_MainWindow(object):
         self.writing.setMargin(6)
         MainWindow.setCentralWidget(self.centralwidget)
         self.top_bar.raise_()
-        self.configure.raise_()
         self.write.raise_()
+        self.configure.raise_()
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
         MainWindow.setStatusBar(self.statusbar)
@@ -1085,7 +1085,7 @@ class Ui_MainWindow(object):
         self.keysig_scale.setItemText(2, QCoreApplication.translate("MainWindow", u"harmonic", None))
         self.keysig_scale.setItemText(3, QCoreApplication.translate("MainWindow", u"melodic", None))
 
-        self.lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Unnamed Configuration", None))
+        self.configuration_name.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Unnamed Configuration", None))
         self.corner_logo.setText("")
         self.nav_configure.setText(QCoreApplication.translate("MainWindow", u"Configure", None))
         self.nav_write.setText(QCoreApplication.translate("MainWindow", u"Write", None))

@@ -134,7 +134,7 @@ class Rhythm:
 
 class Measure:
 	def __init__(self, number, timesig, all_durations, appropriate_durations, whole_beat_durations, duration_weights, right_carryover=0, left_carryover=0, right_pairing=[], left_pairing=[], final_measure=False):
-		# measure number not necessary, but used to help debugging
+		# measure number for debugging
 		self.number = number
 		self.timesig = timesig
 		self.beats_per_measure = timesig[0]
