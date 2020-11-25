@@ -69,7 +69,6 @@ class Ui_MainWindow(object):
         self.lh_range1_slider.setStyleSheet(u"QSlider {\n"
 "	\n"
 "	color: rgb(255, 255, 255);\n"
-"	border-color: rgb(255, 85, 255);\n"
 "	selection-background-color: rgb(11, 17, 17);\n"
 "}")
         self.lh_range1_slider.setMaximum(87)
@@ -724,6 +723,11 @@ class Ui_MainWindow(object):
         self.half_weight_slider = QSlider(self.weights_widget)
         self.half_weight_slider.setObjectName(u"half_weight_slider")
         self.half_weight_slider.setGeometry(QRect(90, 168, 211, 16))
+        self.half_weight_slider.setStyleSheet(u"QSlider {\n"
+"	selection-background-color: rgb(137, 137, 206);\n"
+"}\n"
+"")
+        self.half_weight_slider.setValue(19)
         self.half_weight_slider.setOrientation(Qt.Horizontal)
         self.quarter_weight_image = QLabel(self.weights_widget)
         self.quarter_weight_image.setObjectName(u"quarter_weight_image")
@@ -739,6 +743,10 @@ class Ui_MainWindow(object):
         self.quarter_weight_slider = QSlider(self.weights_widget)
         self.quarter_weight_slider.setObjectName(u"quarter_weight_slider")
         self.quarter_weight_slider.setGeometry(QRect(90, 228, 211, 16))
+        self.quarter_weight_slider.setStyleSheet(u"QSlider {\n"
+"	selection-background-color: rgb(137, 137, 206);\n"
+"}")
+        self.quarter_weight_slider.setValue(49)
         self.quarter_weight_slider.setOrientation(Qt.Horizontal)
         self.half_weight_value = QLabel(self.weights_widget)
         self.half_weight_value.setObjectName(u"half_weight_value")
@@ -774,6 +782,10 @@ class Ui_MainWindow(object):
         self.eighth_weight_slider = QSlider(self.weights_widget)
         self.eighth_weight_slider.setObjectName(u"eighth_weight_slider")
         self.eighth_weight_slider.setGeometry(QRect(90, 290, 211, 16))
+        self.eighth_weight_slider.setStyleSheet(u"QSlider {\n"
+"	selection-background-color: rgb(137, 137, 206);\n"
+"}")
+        self.eighth_weight_slider.setValue(39)
         self.eighth_weight_slider.setOrientation(Qt.Horizontal)
         self.eighth_weight_value = QLabel(self.weights_widget)
         self.eighth_weight_value.setObjectName(u"eighth_weight_value")
@@ -797,6 +809,10 @@ class Ui_MainWindow(object):
         self.whole_weight_slider = QSlider(self.weights_widget)
         self.whole_weight_slider.setObjectName(u"whole_weight_slider")
         self.whole_weight_slider.setGeometry(QRect(90, 110, 211, 16))
+        self.whole_weight_slider.setStyleSheet(u"QSlider {\n"
+"	selection-background-color: rgb(137, 137, 206);\n"
+"}")
+        self.whole_weight_slider.setValue(9)
         self.whole_weight_slider.setOrientation(Qt.Horizontal)
         self.whole_weight_image = QLabel(self.weights_widget)
         self.whole_weight_image.setObjectName(u"whole_weight_image")
@@ -839,6 +855,10 @@ class Ui_MainWindow(object):
         self.sixteenth_weight_slider = QSlider(self.weights_widget)
         self.sixteenth_weight_slider.setObjectName(u"sixteenth_weight_slider")
         self.sixteenth_weight_slider.setGeometry(QRect(90, 350, 211, 16))
+        self.sixteenth_weight_slider.setStyleSheet(u"QSlider {\n"
+"	selection-background-color: rgb(137, 137, 206);\n"
+"}")
+        self.sixteenth_weight_slider.setValue(9)
         self.sixteenth_weight_slider.setOrientation(Qt.Horizontal)
         self.dialog_anchor = QWidget(self.configure)
         self.dialog_anchor.setObjectName(u"dialog_anchor")

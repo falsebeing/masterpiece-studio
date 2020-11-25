@@ -15,6 +15,11 @@ NOTES = ["A", "B", "C", "D", "E", "F", "G"]
 ACCIDENTALS = ["♮", "♯", "♭"]
 SCALES = ["major", "minor", "harmonic", "melodic"]
 
+# Dict holding named sets of duration weights
+#(6, 1), (4, 6), (3, 5), (2, 16), (1.5, 3), (1, 26), (.75, 3), (.5, 20), (.375, 4), (.25, 6), (.1875, 0), (.125, 2), (.0625, 1)
+PRESET_WEIGHTS = {
+}
+
 
 class Studio(QMainWindow):
 	def __init__(self):
@@ -27,7 +32,7 @@ class Studio(QMainWindow):
 		self.init_ui()
 
 	def init_ui(self):
-		
+
 		self.ui.dialog_anchor.setStyleSheet("QWidget {color: rgb(137, 137, 206)}")
 
 		self.ui.nav_group = QButtonGroup()
@@ -69,6 +74,11 @@ class Studio(QMainWindow):
 		self.ui.rh_range1_slider.valueChanged.connect(self.update_rh_range1)
 		self.ui.rh_range2_slider.valueChanged.connect(self.update_rh_range2)
 
+		self.ui.whole_weight_slider.valueChanged.connect(self.update_whole_weight)
+		self.ui.half_weight_slider.valueChanged.connect(self.update_half_weight)
+		self.ui.quarter_weight_slider.valueChanged.connect(self.update_quarter_weight)
+		self.ui.eighth_weight_slider.valueChanged.connect(self.update_eighth_weight)
+		self.ui.sixteenth_weight_slider.valueChanged.connect(self.update_sixteenth_weight)
 
 		# Write
 		self.ui.song_name.textEdited.connect(self.update_song_name)
@@ -93,7 +103,38 @@ class Studio(QMainWindow):
 		self.configuration["rh_range2"] = self.ui.rh_range2_slider.value()
 		self.configuration["lh_range2"] = self.ui.lh_range2_slider.value()
 
+		self.configuration["weights"] = {}
+		self.configuration["weights"]["whole"] = self.ui.whole_weight_slider.value()
+		self.configuration["weights"]["half"] = self.ui.half_weight_slider.value()
+		self.configuration["weights"]["quarter"] = self.ui.quarter_weight_slider.value()
+		self.configuration["weights"]["eighth"] = self.ui.eighth_weight_slider.value()
+		self.configuration["weights"]["sixteenth"] = self.ui.sixteenth_weight_slider.value()
+
 		self.update_all()
+
+
+	# runs every update method
+	def update_all(self):
+		self.update_measures()
+		self.update_timesig()
+		self.update_keysig_note()
+		self.update_keysig_acc()
+		self.update_keysig_scale()
+		self.update_song_name()
+		self.update_all_ranges()
+		self.update_all_weights()
+		self.update_pdf()
+		self.update_midi()
+
+	def navigate(self, button):
+		if button == self.ui.nav_configure:
+			self.ui.configure.raise_()
+		elif button == self.ui.nav_write:
+			self.ui.write.raise_()
+
+	# Compose button should only be called with a valid folder selected
+	def compose(self):
+		Composition(self.prepare_rules())
 
 	# prepares self.configuration values to be passed to Composition constructor
 	# returns rules dict
@@ -110,29 +151,6 @@ class Studio(QMainWindow):
 		rules['midi'] = self.configuration['midi']
 
 		return rules
-
-	# runs every update method
-	def update_all(self):
-		self.update_measures()
-		self.update_timesig()
-		self.update_keysig_note()
-		self.update_keysig_acc()
-		self.update_keysig_scale()
-		self.update_song_name()
-		self.update_all_ranges()
-		self.update_pdf()
-		self.update_midi()
-
-	def navigate(self, button):
-		if button == self.ui.nav_configure:
-			self.ui.configure.raise_()
-		elif button == self.ui.nav_write:
-			self.ui.write.raise_()
-
-	# Compose button should only be called with a valid folder selected
-	def compose(self):
-		Composition(self.prepare_rules())
-
 	def update_song_name(self):
 		self.configuration['song_name'] = self.ui.song_name.text()
 
@@ -193,7 +211,7 @@ class Studio(QMainWindow):
 		#update labels
 		self.ui.lh_range1_label.setText(self.lh_range1_numbered)
 		self.ui.lh_range1_header_label.setText(self.lh_range1_numbered)
-		self.update_lh_span()
+		self._update_lh_span()
 
 	def update_lh_range2(self):
 		self.configuration["lh_range2"] = self.ui.lh_range2_slider.value()
@@ -210,9 +228,9 @@ class Studio(QMainWindow):
 		#update labels
 		self.ui.lh_range2_label.setText(self.lh_range2_numbered)
 		self.ui.lh_range2_header_label.setText(self.lh_range2_numbered)
-		self.update_lh_span()
+		self._update_lh_span()
 
-	def update_lh_span(self):
+	def _update_lh_span(self):
 		self.lh_span = self.configuration["lh_range2"] - self.configuration["lh_range1"]
 		self.ui.lh_span.setText(str(abs(self.lh_span)))
 
@@ -231,7 +249,7 @@ class Studio(QMainWindow):
 		#update labels
 		self.ui.rh_range1_label.setText(self.rh_range1_numbered)
 		self.ui.rh_range1_header_label.setText(self.rh_range1_numbered)
-		self.update_rh_span()
+		self._update_rh_span()
 
 	def update_rh_range2(self):
 		self.configuration["rh_range2"] = self.ui.rh_range2_slider.value()
@@ -249,7 +267,7 @@ class Studio(QMainWindow):
 		self.ui.rh_range2_label.setText(self.rh_range2_numbered)
 		self.ui.rh_range2_header_label.setText(self.rh_range2_numbered)
 
-		self.update_rh_span()
+		self._update_rh_span()
 
 	def update_all_ranges(self):
 		self.update_lh_range1()
@@ -257,9 +275,36 @@ class Studio(QMainWindow):
 		self.update_rh_range1()
 		self.update_rh_range2()
 
-	def update_rh_span(self):
+	def _update_rh_span(self):
 		self.rh_span = self.configuration["rh_range2"] - self.configuration["rh_range1"]
 		self.ui.rh_span.setText(str(abs(self.rh_span)))
+
+	def update_all_weights(self):
+		self.update_whole_weight()
+		self.update_half_weight()
+		self.update_quarter_weight()
+		self.update_eighth_weight()
+		self.update_sixteenth_weight()
+
+	def update_whole_weight(self):
+		self.configuration["weights"]["whole"] = self.ui.whole_weight_slider.value()
+		self.ui.whole_weight_value.setText(str(self.configuration["weights"]["whole"]+1))
+
+	def update_half_weight(self):
+		self.configuration["weights"]["half"] = self.ui.half_weight_slider.value()
+		self.ui.half_weight_value.setText(str(self.configuration["weights"]["half"]+1))
+
+	def update_quarter_weight(self):
+		self.configuration["weights"]["quarter"] = self.ui.quarter_weight_slider.value()
+		self.ui.quarter_weight_value.setText(str(self.configuration["weights"]["quarter"]+1))
+
+	def update_eighth_weight(self):
+		self.configuration["weights"]["eighth"] = self.ui.eighth_weight_slider.value()
+		self.ui.eighth_weight_value.setText(str(self.configuration["weights"]["eighth"]+1))
+
+	def update_sixteenth_weight(self):
+		self.configuration["weights"]["sixteenth"] = self.ui.sixteenth_weight_slider.value()
+		self.ui.sixteenth_weight_value.setText(str(self.configuration["weights"]["sixteenth"]+1))
 
 	def update_pdf(self):
 		self.configuration["pdf"] = self.ui.pdf.isChecked()

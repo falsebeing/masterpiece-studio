@@ -53,7 +53,6 @@ class Rhythm:
 		self.left_pattern, self.right_pattern = self.prepare_notation()
 
 
-
 	def prepare_notation(self):
 		left_pattern = []
 		right_pattern = []
@@ -158,6 +157,7 @@ class Measure:
 		self.left_hand["overflow"], self.left_hand["leftover_pairing"] = self.fill_hand(self.left_hand)
 
 	def modify_weights_for_lh(self):
+		# "midpoint" should use weight value as well as index
 		lh_weights = []
 		midpoint = int(len(self.right_hand["duration_weights"])/2)
 		modifier = 1
@@ -177,7 +177,6 @@ class Measure:
 					count += d[0][1]
 				print(f" /  --> {count}")
 			print(f'Overflow beats: {h["overflow"]}')
-
 
 
 	def get_carryovers(self):
