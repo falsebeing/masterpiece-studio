@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1589</width>
+    <width>1600</width>
     <height>900</height>
    </rect>
   </property>
@@ -14,8 +14,13 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color:rgb(16, 24, 24);
-</string>
+   <string notr="true">QWidget {
+	background-color:rgb(16, 24, 24);
+}
+
+QFileDialog {
+	color: rgb(137, 137, 206);
+}</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QFrame" name="configure">
@@ -596,10 +601,10 @@
     <widget class="QWidget" name="horizontalLayoutWidget_4">
      <property name="geometry">
       <rect>
-       <x>150</x>
-       <y>340</y>
+       <x>130</x>
+       <y>350</y>
        <width>73</width>
-       <height>51</height>
+       <height>31</height>
       </rect>
      </property>
      <layout class="QHBoxLayout" name="ranges_mode">
@@ -719,9 +724,9 @@ QPushButton:disabled {
     <widget class="QLabel" name="ranges_label">
      <property name="geometry">
       <rect>
-       <x>30</x>
-       <y>350</y>
-       <width>101</width>
+       <x>60</x>
+       <y>352</y>
+       <width>61</width>
        <height>26</height>
       </rect>
      </property>
@@ -903,7 +908,7 @@ QPushButton:disabled {
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>data/images/keyboard-cat.png</pixmap>
+       <pixmap>../../../.designer/backup/data/images/keyboard-cat.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -915,16 +920,6 @@ QPushButton:disabled {
       <rect>
        <x>570</x>
        <y>180</y>
-       <width>251</width>
-       <height>61</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QWidget" name="half_weight_widget" native="true">
-     <property name="geometry">
-      <rect>
-       <x>570</x>
-       <y>120</y>
        <width>251</width>
        <height>61</height>
       </rect>
@@ -1559,20 +1554,44 @@ QComboBox:focus {
     <widget class="QWidget" name="weights_widget" native="true">
      <property name="geometry">
       <rect>
-       <x>630</x>
-       <y>280</y>
-       <width>441</width>
-       <height>301</height>
+       <x>670</x>
+       <y>270</y>
+       <width>621</width>
+       <height>521</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QWidget {
+	background-color: rgb(0, 18, 23);
+}</string>
      </property>
      <widget class="QComboBox" name="weight_profile">
       <property name="geometry">
        <rect>
         <x>140</x>
-        <y>90</y>
+        <y>20</y>
         <width>100</width>
         <height>23</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QComboBox {
+
+	border: 1px solid rgb(16, 24, 24);
+	border-radius: 4px;
+	background-color: rgb(16, 24, 24);
+	color: rgb(137, 137, 206);
+
+}
+
+QComboBox:hover {
+	background-color: rgb(24, 40, 40);
+}
+
+QComboBox:focus {
+	border: rgb(85, 170, 255);
+}
+</string>
       </property>
       <item>
        <property name="text">
@@ -1581,11 +1600,21 @@ QComboBox:focus {
       </item>
       <item>
        <property name="text">
+        <string>Fast</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Slow</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
         <string>Custom</string>
        </property>
       </item>
      </widget>
-     <widget class="QLabel" name="lh_range2_header_label_3">
+     <widget class="QLabel" name="quarter_weight_value">
       <property name="geometry">
        <rect>
         <x>110</x>
@@ -1622,7 +1651,7 @@ QComboBox:focus {
        <enum>Qt::Horizontal</enum>
       </property>
      </widget>
-     <widget class="QLabel" name="lh_range2_header_label_2">
+     <widget class="QLabel" name="quarter_weight_image">
       <property name="geometry">
        <rect>
         <x>50</x>
@@ -1643,13 +1672,19 @@ QComboBox:focus {
 }</string>
       </property>
       <property name="text">
-       <string>Quarter Icon</string>
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>data/images/quarter.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
       </property>
       <property name="wordWrap">
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QSlider" name="horizontalSlider">
+     <widget class="QSlider" name="quarter_weight_slider">
       <property name="geometry">
        <rect>
         <x>90</x>
@@ -1686,7 +1721,7 @@ QComboBox:focus {
        <string>1-100</string>
       </property>
      </widget>
-     <widget class="QLabel" name="half_weight_label">
+     <widget class="QLabel" name="half_weight_image">
       <property name="geometry">
        <rect>
         <x>50</x>
@@ -1707,7 +1742,13 @@ QComboBox:focus {
 }</string>
       </property>
       <property name="text">
-       <string>Half Icon</string>
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>data/images/half.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
       </property>
       <property name="wordWrap">
        <bool>true</bool>
@@ -1717,7 +1758,7 @@ QComboBox:focus {
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>88</y>
+        <y>18</y>
         <width>101</width>
         <height>30</height>
        </rect>
@@ -1761,7 +1802,231 @@ QComboBox:focus {
        <number>6</number>
       </property>
      </widget>
+     <widget class="QSlider" name="eighth_weight_slider">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>290</y>
+        <width>211</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="eighth_weight_value">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>260</y>
+        <width>61</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color:rgb(137, 137, 206)
+	
+}</string>
+      </property>
+      <property name="text">
+       <string>1-100</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="eighth_weight_image">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>250</y>
+        <width>40</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color:rgb(137, 137, 206)
+	
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>data/images/eighth.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QSlider" name="whole_weight_slider">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>110</y>
+        <width>211</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="whole_weight_image">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>90</y>
+        <width>21</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color:rgb(137, 137, 206)
+	
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>data/images/whole.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="whole_weight_value">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>80</y>
+        <width>61</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color:rgb(137, 137, 206)
+	
+}</string>
+      </property>
+      <property name="text">
+       <string>1-100</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="sixteenth_weight_image">
+      <property name="geometry">
+       <rect>
+        <x>29</x>
+        <y>310</y>
+        <width>61</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color:rgb(137, 137, 206)
+	
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>data/images/sixteenth.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="sixteenth_weight_value">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>320</y>
+        <width>61</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	color:rgb(137, 137, 206)
+	
+}</string>
+      </property>
+      <property name="text">
+       <string>1-100</string>
+      </property>
+     </widget>
+     <widget class="QSlider" name="sixteenth_weight_slider">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>350</y>
+        <width>211</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
     </widget>
+    <widget class="QWidget" name="dialog_anchor" native="true">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>430</x>
+       <y>70</y>
+       <width>61</width>
+       <height>41</height>
+      </rect>
+     </property>
+    </widget>
+    <zorder>dialog_anchor</zorder>
     <zorder>keyboard_cat</zorder>
     <zorder>verticalLayoutWidget_3</zorder>
     <zorder>lh_range_label</zorder>
@@ -1782,7 +2047,6 @@ QComboBox:focus {
     <zorder>length_label_3</zorder>
     <zorder>length_label_4</zorder>
     <zorder>quarter_note_weight</zorder>
-    <zorder>half_weight_widget</zorder>
     <zorder>verticalLayoutWidget</zorder>
     <zorder>layoutWidget</zorder>
     <zorder>time_sig_label</zorder>
@@ -1815,36 +2079,13 @@ QComboBox:focus {
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QPushButton" name="corner_logo">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>0</y>
-       <width>80</width>
-       <height>80</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="icon">
-      <iconset>
-       <normaloff>data/images/avante-note.png</normaloff>data/images/avante-note.png</iconset>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>100</width>
-       <height>100</height>
-      </size>
-     </property>
-    </widget>
     <widget class="QWidget" name="horizontalLayoutWidget_5">
      <property name="geometry">
       <rect>
-       <x>140</x>
+       <x>190</x>
        <y>0</y>
        <width>481</width>
-       <height>80</height>
+       <height>82</height>
       </rect>
      </property>
      <layout class="QHBoxLayout" name="nav">
@@ -1938,7 +2179,6 @@ QPushButton:checked {
 QPushButton:hover {
 	color: rgb(137, 137, 206);
 	background-color:  rgb(18, 30, 30);
-	border: 2px solid rgb(36, 36, 54);
 }
 
 
@@ -1959,6 +2199,22 @@ QPushButton:checked {
        </widget>
       </item>
      </layout>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>80</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>data/images/avante-note.png</pixmap>
+     </property>
     </widget>
    </widget>
    <widget class="QFrame" name="write">

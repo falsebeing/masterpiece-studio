@@ -16,16 +16,16 @@ INTERVALS = [1, 2, 3, 4, 5, 6, 7]
 
 class Notation:
 
-	def __init__(self, key, key_scale, left_limits, right_limits, rhythm, accidental_freq, rest_freq, anchor_strength):
+	def __init__(self, key, key_scale, lg_ranges, rh_ranges, rhythm, accidental_freq, rest_freq, anchor_strength):
 		self.key = key
 		self.key_scale = key_scale
 		self.base_list = self.get_base_list
 		self.scale_map = self.get_scale_map() # Only used in function map_scale
 		self.scale = self.map_scale()
-		self.right_limits = right_limits
-		self.left_limits = left_limits
-		self.rh_notes = self.map_hand(self.right_limits)
-		self.lh_notes = self.map_hand(self.left_limits)
+		self.rh_ranges = rh_ranges
+		self.lg_ranges = lg_ranges
+		self.rh_notes = self.map_hand(self.rh_ranges)
+		self.lh_notes = self.map_hand(self.lg_ranges)
 		print(f"DEBUG: {self.scale_map}")
 		print(f"DEBUG: rh_notes: {self.rh_notes}")
 		print(f"DEBUG: lh_notes: {self.lh_notes}")
@@ -54,7 +54,7 @@ class Notation:
 			else:
 				return FLAT_LIST
 
-	def map_hand(self, limits):
+	def map_hand(self, ranges):
 		pitches = []
 		base_list = self.base_list()
 
@@ -63,7 +63,7 @@ class Notation:
 		run = 0
 		for i in self.scale_map:
 			try:
-				if base_list[start_index+run] != limits[1]:
+				if base_list[start_index+run] != ranges[1]:
 					pitches.append(base_list[start_index+run])
 					run += i
 				else:
@@ -75,7 +75,7 @@ class Notation:
 		for i in reversed(self.scale_map):
 			try:
 				run += i
-				if base_list[start_index-run] != limits[0] and start_index-run >= 0:
+				if base_list[start_index-run] != ranges[0] and start_index-run >= 0:
 					pitches.insert(0, base_list[start_index-run])
 				else:
 					break
@@ -282,9 +282,3 @@ class Notation:
 				print(f"LOG(weight_anchor): Anchor weighing in at abs(distance_from_anchor): abs({distance_from_anchor}) /3 rounded down: {anchor_weight}")
 		return anchor_weight
 
-if __name__ == "__main__":
-	notation = Notation("d", 'major', RH_LIMITS, LH_LIMITS, durationsre.Rhythm(10, (4,4)), 0, 1, 0)
-	print(f"LOG: rh_notes: {notation.rh_notes}")
-	print(notation.scale)
-	print(f"right_notation: {notation.right_notation}")
-	print(f"left_notation: {notation.left_notation}")

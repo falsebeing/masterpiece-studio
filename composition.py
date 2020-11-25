@@ -47,8 +47,8 @@ class Composition:
 	def __init__(self, rules):
 		self.__dict__.update(rules)
 
-		self.rhythm = rhythms.Rhythm(self.measures, self.timesig)
-		self.notation = pitchesre.Notation(self.key, self.key_scale, self.left_limits, self.right_limits, self.rhythm, None, 1, None)
+		self.rhythm = durationsre.Rhythm(self.measures, self.timesig)
+		self.notation = pitchesre.Notation(self.key, self.key_scale, self.lh_ranges, self.rh_ranges, self.rhythm, None, 1, None)
 
 		self.write_ly(self.lywrite_content())
 
@@ -90,6 +90,7 @@ class Composition:
 		file.write(content)
 		file.close()
 		if self.pdf:
+			starting_dir = os.getcwd()
 			os.chdir(self.filepath)
 			subprocess.call(["lilypond", self.filename])
-			os.chdir("../")
+			os.chdir(starting_dir)

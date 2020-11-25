@@ -1,5 +1,5 @@
 import random
-from custom_loggin import *
+from custom_logging import *
 
 ALL_LY_NOTES = ['1.', '1', '2.', '2', '4.', '4', '8.', '8', '16.', '16', '32.', '32', '64']
 
@@ -13,7 +13,7 @@ class Rhythm:
 		self.measures = measures
 		self.timesig = timesig
 
-		
+				
 
 
 

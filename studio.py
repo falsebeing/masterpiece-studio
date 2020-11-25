@@ -27,6 +27,8 @@ class Studio(QMainWindow):
 		self.init_ui()
 
 	def init_ui(self):
+		
+		self.ui.dialog_anchor.setStyleSheet("QWidget {color: rgb(137, 137, 206)}")
 
 		self.ui.nav_group = QButtonGroup()
 		self.ui.nav_group.addButton(self.ui.nav_configure)
@@ -107,6 +109,8 @@ class Studio(QMainWindow):
 		rules['pdf'] = self.configuration['pdf']
 		rules['midi'] = self.configuration['midi']
 
+		return rules
+
 	# runs every update method
 	def update_all(self):
 		self.update_measures()
@@ -127,7 +131,7 @@ class Studio(QMainWindow):
 
 	# Compose button should only be called with a valid folder selected
 	def compose(self):
-		Composition(self.song_name, self.song_folder, self.prepare_rules())
+		Composition(self.prepare_rules())
 
 	def update_song_name(self):
 		self.configuration['song_name'] = self.ui.song_name.text()
@@ -286,66 +290,32 @@ class Studio(QMainWindow):
 		return "".join(numbered)
 
 	def assemble_key(self):
-		if self.keysig_acc == "♯":
-			return f"{self.keysig_note.lower()}is"
-		elif self.keysig_acc == "♭":
-			return f"{self.keysig_note.lower()}es"
+		if self.configuration["keysig_acc"] == "♯":
+			return f"{self.configuration['keysig_note'].lower()}is"
+		elif self.configuration["keysig_acc"] == "♭":
+			return f"{self.configuration['keysig_note'].lower()}es"
 		else:
-			return self.keysig_note.lower()
+			return self.configuration["keysig_note"].lower()
 
 
 	# Configurations
 	def save_configuration(self):
-
-		if configuration_filename := self._save_configuration_dialog():
+		save_dialog = QFileDialog.getSaveFileName(self.ui.dialog_anchor, "Save Configuration", f"{os.getcwd()}/configurations", ".cf", options=QFileDialog.DontUseNativeDialog)
+		if save_dialog[0]:
+			configuration_filename = ""
+			if save_dialog[0][-3:] != '.cf':
+				configuration_filename = save_dialog[0]+save_dialog[1]
 			self._write_configuration(configuration_filename)
 
 	def _write_configuration(self, configuration_filename):
-		log_debug(f"pickle time")
 		pickle.dump(self.configuration, open(configuration_filename, 'wb'))
 
-	# returns full filename
-	def _save_configuration_dialog(self):
-		self.filename = ""
-		self.ui.save_dialog = QFileDialog(self)
-		self.ui.save_dialog.setAcceptMode(QFileDialog.AcceptSave)
-		self.ui.save_dialog.setDirectory(os.getcwd()+'/configurations')
-		self.ui.save_dialog.setFilter(QDir.Dirs) #idk what it does
-		if self.ui.save_dialog.exec_():
-
-			_file = self.ui.save_dialog.selectedFiles()[0].split("/")[-1]
-			_directory = self.ui.save_dialog.directory().path()
-			log_debug(f"_file: {_file}")
-			log_debug(f"_directory {_directory}")
-			
-			filename = f"{_directory}/{_file}"
-
-			if filename[-3:] != ".cf":
-				filename += ".cf"
-
-			return filename
-
 	def load_configuration(self):
-		if configuration_filename := self._load_configuration_dialog():
+		if configuration_filename := QFileDialog.getOpenFileName(self.ui.dialog_anchor, "Load Configuration", f"{os.getcwd()}/configurations", "*.cf", options=QFileDialog.DontUseNativeDialog)[0]:
 
 			self.configuration = pickle.load(open(configuration_filename, "rb"))
-			log_debug(self.configuration)
+			log_debug(f"before applying self.configuration: {self.configuration}")
 			self.apply_configuration()
-			
-	def _load_configuration_dialog(self):
-		self.ui.load_configuration_dialog = QFileDialog(self)
-		self.ui.load_configuration_dialog.setAcceptMode(QFileDialog.AcceptOpen)
-		# I don't know why this setDirectory does nothing
-		self.ui.load_configuration_dialog.setDirectory(QDir(os.getcwd()+'/configurations'))
-		# Get a filter if possible because input needs to be valid
-
-		if self.ui.load_configuration_dialog.exec_():
-			_file = self.ui.load_configuration_dialog.selectedFiles()[0].split("/")[-1]
-			_directory = self.ui.load_configuration_dialog.directory().path()
-			log_debug(f"_file: {_file}", source="(_load_configuration_dialog)")
-			log_debug(f"_directory: {_directory}", source="(_load_configuration_dialog)")
-			
-			return f"{_directory}/{_file}"
 
 	def apply_configuration(self):
 		print('applying config')
@@ -353,7 +323,7 @@ class Studio(QMainWindow):
 		self.ui.timesig_num.setText(str(self.configuration['timesig'][0]))
 		self.ui.timesig_den.setText(str(self.configuration['timesig'][1]))
 
-		# combobox inputs need to convert back to related index from stored string value
+		# combobox inputs convert back to related index from stored string value
 		self.ui.keysig_note.setCurrentIndex(self.index_from_note(self.configuration["keysig_note"]))
 		self.ui.keysig_acc.setCurrentIndex(self.index_from_acc(self.configuration["keysig_acc"]))
 		self.ui.keysig_scale.setCurrentIndex(self.index_from_scale(self.configuration["keysig_scale"]))
@@ -382,18 +352,23 @@ class Studio(QMainWindow):
 
 	# Songs
 	def select_song_folder(self):
-		directory = ""
-		self.ui.select_folder_dialog = QFileDialog(self)
-		self.ui.select_folder_dialog.setAcceptMode(QFileDialog.AcceptSave)
-		self.ui.select_folder_dialog.setFileMode(QFileDialog.Directory)
-		self.ui.select_folder_dialog.setDirectory(QDir(os.getcwd()+'/output'))
-
-		if 	self.ui.select_folder_dialog.exec_():
-			directory = self.ui.select_folder_dialog.selectedFiles()[0]
-			print(directory)
+		if directory := QFileDialog.getExistingDirectory(self.dialog_anchor, "Select Folder", os.getcwd()+"/output", options=QFileDialog.ShowDirsOnly|QFileDialog.DontUseNativeDialog):
 			direct = QDir(os.getcwd()).relativeFilePath(directory)
 			self.song_folder = direct
 			self.update_song_filename()
+
+		# directory = ""
+		# self.ui.select_folder_dialog = QFileDialog(self)
+		# self.ui.select_folder_dialog.setAcceptMode(QFileDialog.AcceptSave)
+		# self.ui.select_folder_dialog.setFileMode(QFileDialog.Directory)
+		# self.ui.select_folder_dialog.setDirectory(QDir(os.getcwd()+'/output'))
+
+		# if 	self.ui.select_folder_dialog.exec_():
+		# 	directory = self.ui.select_folder_dialog.selectedFiles()[0]
+		# 	print(directory)
+		# 	direct = QDir(os.getcwd()).relativeFilePath(directory)
+		# 	self.song_folder = direct
+		# 	self.update_song_filename()
 
 	def update_song_filename(self):
 		print(self.song_filename())

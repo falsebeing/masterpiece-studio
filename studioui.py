@@ -20,9 +20,14 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1589, 900)
-        MainWindow.setStyleSheet(u"background-color:rgb(16, 24, 24);\n"
-"")
+        MainWindow.resize(1600, 900)
+        MainWindow.setStyleSheet(u"QWidget {\n"
+"	background-color:rgb(16, 24, 24);\n"
+"}\n"
+"\n"
+"QFileDialog {\n"
+"	color: rgb(137, 137, 206);\n"
+"}")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.configure = QFrame(self.centralwidget)
@@ -32,7 +37,7 @@ class Ui_MainWindow(object):
         self.configure.setFrameShadow(QFrame.Raised)
         self.verticalLayoutWidget_3 = QWidget(self.configure)
         self.verticalLayoutWidget_3.setObjectName(u"verticalLayoutWidget_3")
-        self.verticalLayoutWidget_3.setGeometry(QRect(60, 550, 511, 51))
+        self.verticalLayoutWidget_3.setGeometry(QRect(70, 420, 511, 51))
         self.lh_range1_box = QVBoxLayout(self.verticalLayoutWidget_3)
         self.lh_range1_box.setObjectName(u"lh_range1_box")
         self.lh_range1_box.setContentsMargins(0, 0, 0, 0)
@@ -80,7 +85,7 @@ class Ui_MainWindow(object):
 
         self.lh_range_label = QLabel(self.configure)
         self.lh_range_label.setObjectName(u"lh_range_label")
-        self.lh_range_label.setGeometry(QRect(70, 520, 71, 26))
+        self.lh_range_label.setGeometry(QRect(80, 390, 71, 26))
         self.lh_range_label.setFont(font)
         self.lh_range_label.setStyleSheet(u"QLabel {\n"
 "	color:rgb(137, 137, 206)\n"
@@ -88,7 +93,7 @@ class Ui_MainWindow(object):
 "}")
         self.verticalLayoutWidget_4 = QWidget(self.configure)
         self.verticalLayoutWidget_4.setObjectName(u"verticalLayoutWidget_4")
-        self.verticalLayoutWidget_4.setGeometry(QRect(60, 600, 511, 51))
+        self.verticalLayoutWidget_4.setGeometry(QRect(70, 470, 511, 51))
         self.lh_range2_box = QVBoxLayout(self.verticalLayoutWidget_4)
         self.lh_range2_box.setObjectName(u"lh_range2_box")
         self.lh_range2_box.setContentsMargins(0, 0, 0, 0)
@@ -134,7 +139,7 @@ class Ui_MainWindow(object):
 
         self.lh_range1_header_label = QLabel(self.configure)
         self.lh_range1_header_label.setObjectName(u"lh_range1_header_label")
-        self.lh_range1_header_label.setGeometry(QRect(260, 520, 29, 26))
+        self.lh_range1_header_label.setGeometry(QRect(270, 390, 29, 26))
         self.lh_range1_header_label.setFont(font)
         self.lh_range1_header_label.setStyleSheet(u"QLabel {\n"
 "	color:rgb(137, 137, 206)\n"
@@ -142,7 +147,7 @@ class Ui_MainWindow(object):
 "}")
         self.lh_range2_header_label = QLabel(self.configure)
         self.lh_range2_header_label.setObjectName(u"lh_range2_header_label")
-        self.lh_range2_header_label.setGeometry(QRect(320, 520, 29, 26))
+        self.lh_range2_header_label.setGeometry(QRect(330, 390, 29, 26))
         self.lh_range2_header_label.setFont(font)
         self.lh_range2_header_label.setStyleSheet(u"QLabel {\n"
 "	color:rgb(137, 137, 206)\n"
@@ -150,7 +155,7 @@ class Ui_MainWindow(object):
 "}")
         self.dash = QLabel(self.configure)
         self.dash.setObjectName(u"dash")
-        self.dash.setGeometry(QRect(300, 520, 16, 26))
+        self.dash.setGeometry(QRect(310, 390, 16, 26))
         self.dash.setFont(font)
         self.dash.setStyleSheet(u"QLabel {\n"
 "	color:rgb(137, 137, 206)\n"
@@ -158,7 +163,7 @@ class Ui_MainWindow(object):
 "}")
         self.rh_range_label = QLabel(self.configure)
         self.rh_range_label.setObjectName(u"rh_range_label")
-        self.rh_range_label.setGeometry(QRect(70, 670, 121, 26))
+        self.rh_range_label.setGeometry(QRect(80, 540, 121, 26))
         self.rh_range_label.setFont(font)
         self.rh_range_label.setStyleSheet(u"QLabel {\n"
 "	color:rgb(137, 137, 206)\n"
@@ -166,7 +171,7 @@ class Ui_MainWindow(object):
 "}")
         self.rh_range2_header_label = QLabel(self.configure)
         self.rh_range2_header_label.setObjectName(u"rh_range2_header_label")
-        self.rh_range2_header_label.setGeometry(QRect(320, 670, 29, 26))
+        self.rh_range2_header_label.setGeometry(QRect(330, 540, 29, 26))
         self.rh_range2_header_label.setFont(font)
         self.rh_range2_header_label.setStyleSheet(u"QLabel {\n"
 "	color:rgb(137, 137, 206)\n"
@@ -174,7 +179,7 @@ class Ui_MainWindow(object):
 "}")
         self.rh_range1_header_label = QLabel(self.configure)
         self.rh_range1_header_label.setObjectName(u"rh_range1_header_label")
-        self.rh_range1_header_label.setGeometry(QRect(260, 670, 29, 26))
+        self.rh_range1_header_label.setGeometry(QRect(270, 540, 29, 26))
         self.rh_range1_header_label.setFont(font)
         self.rh_range1_header_label.setStyleSheet(u"QLabel {\n"
 "	color:rgb(137, 137, 206)\n"
@@ -182,7 +187,7 @@ class Ui_MainWindow(object):
 "}")
         self.verticalLayoutWidget_6 = QWidget(self.configure)
         self.verticalLayoutWidget_6.setObjectName(u"verticalLayoutWidget_6")
-        self.verticalLayoutWidget_6.setGeometry(QRect(60, 750, 511, 51))
+        self.verticalLayoutWidget_6.setGeometry(QRect(70, 620, 511, 51))
         self.rh_range2_box = QVBoxLayout(self.verticalLayoutWidget_6)
         self.rh_range2_box.setObjectName(u"rh_range2_box")
         self.rh_range2_box.setContentsMargins(0, 0, 0, 0)
@@ -228,7 +233,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayoutWidget_7 = QWidget(self.configure)
         self.verticalLayoutWidget_7.setObjectName(u"verticalLayoutWidget_7")
-        self.verticalLayoutWidget_7.setGeometry(QRect(60, 700, 511, 51))
+        self.verticalLayoutWidget_7.setGeometry(QRect(70, 570, 511, 51))
         self.rh_range1_box = QVBoxLayout(self.verticalLayoutWidget_7)
         self.rh_range1_box.setObjectName(u"rh_range1_box")
         self.rh_range1_box.setContentsMargins(0, 0, 0, 0)
@@ -274,7 +279,7 @@ class Ui_MainWindow(object):
 
         self.dash_2 = QLabel(self.configure)
         self.dash_2.setObjectName(u"dash_2")
-        self.dash_2.setGeometry(QRect(300, 670, 16, 26))
+        self.dash_2.setGeometry(QRect(310, 540, 16, 26))
         self.dash_2.setFont(font)
         self.dash_2.setStyleSheet(u"QLabel {\n"
 "	color:rgb(137, 137, 206)\n"
@@ -282,7 +287,7 @@ class Ui_MainWindow(object):
 "}")
         self.horizontalLayoutWidget_4 = QWidget(self.configure)
         self.horizontalLayoutWidget_4.setObjectName(u"horizontalLayoutWidget_4")
-        self.horizontalLayoutWidget_4.setGeometry(QRect(150, 460, 73, 51))
+        self.horizontalLayoutWidget_4.setGeometry(QRect(130, 350, 73, 31))
         self.ranges_mode = QHBoxLayout(self.horizontalLayoutWidget_4)
         self.ranges_mode.setSpacing(2)
         self.ranges_mode.setObjectName(u"ranges_mode")
@@ -364,7 +369,7 @@ class Ui_MainWindow(object):
 
         self.ranges_label = QLabel(self.configure)
         self.ranges_label.setObjectName(u"ranges_label")
-        self.ranges_label.setGeometry(QRect(70, 470, 51, 26))
+        self.ranges_label.setGeometry(QRect(60, 352, 61, 26))
         self.ranges_label.setFont(font)
         self.ranges_label.setStyleSheet(u"QLabel {\n"
 "	color:rgb(137, 137, 206)\n"
@@ -372,7 +377,7 @@ class Ui_MainWindow(object):
 "}")
         self.lh_span = QLabel(self.configure)
         self.lh_span.setObjectName(u"lh_span")
-        self.lh_span.setGeometry(QRect(470, 520, 81, 26))
+        self.lh_span.setGeometry(QRect(480, 390, 81, 26))
         self.lh_span.setFont(font)
         self.lh_span.setStyleSheet(u"QLabel {\n"
 "	color:rgb(137, 137, 206)\n"
@@ -380,7 +385,7 @@ class Ui_MainWindow(object):
 "}")
         self.rh_span = QLabel(self.configure)
         self.rh_span.setObjectName(u"rh_span")
-        self.rh_span.setGeometry(QRect(470, 670, 81, 26))
+        self.rh_span.setGeometry(QRect(480, 540, 81, 26))
         self.rh_span.setFont(font)
         self.rh_span.setStyleSheet(u"QLabel {\n"
 "	color:rgb(137, 137, 206)\n"
@@ -388,7 +393,7 @@ class Ui_MainWindow(object):
 "}")
         self.length_label_3 = QLabel(self.configure)
         self.length_label_3.setObjectName(u"length_label_3")
-        self.length_label_3.setGeometry(QRect(400, 520, 60, 30))
+        self.length_label_3.setGeometry(QRect(410, 390, 60, 30))
         self.length_label_3.setMinimumSize(QSize(60, 0))
         self.length_label_3.setMaximumSize(QSize(120, 30))
         self.length_label_3.setFont(font)
@@ -398,7 +403,7 @@ class Ui_MainWindow(object):
         self.length_label_3.setMargin(6)
         self.length_label_4 = QLabel(self.configure)
         self.length_label_4.setObjectName(u"length_label_4")
-        self.length_label_4.setGeometry(QRect(400, 670, 60, 30))
+        self.length_label_4.setGeometry(QRect(410, 540, 60, 30))
         self.length_label_4.setMinimumSize(QSize(60, 0))
         self.length_label_4.setMaximumSize(QSize(120, 30))
         self.length_label_4.setFont(font)
@@ -415,56 +420,11 @@ class Ui_MainWindow(object):
         self.keyboard_cat_label_2.setObjectName(u"keyboard_cat_label_2")
         self.keyboard_cat_label_2.setEnabled(True)
         self.keyboard_cat_label_2.setGeometry(QRect(0, 0, 1600, 900))
-        self.keyboard_cat_label_2.setPixmap(QPixmap(u"data/images/keyboard-cat.png"))
+        self.keyboard_cat_label_2.setPixmap(QPixmap(u"../../../.designer/backup/data/images/keyboard-cat.png"))
         self.keyboard_cat_label_2.setScaledContents(True)
         self.quarter_note_weight = QWidget(self.configure)
         self.quarter_note_weight.setObjectName(u"quarter_note_weight")
         self.quarter_note_weight.setGeometry(QRect(570, 180, 251, 61))
-        self.lh_range2_header_label_2 = QLabel(self.quarter_note_weight)
-        self.lh_range2_header_label_2.setObjectName(u"lh_range2_header_label_2")
-        self.lh_range2_header_label_2.setGeometry(QRect(0, 0, 40, 51))
-        self.lh_range2_header_label_2.setFont(font)
-        self.lh_range2_header_label_2.setStyleSheet(u"QLabel {\n"
-"	color:rgb(137, 137, 206)\n"
-"	\n"
-"}")
-        self.lh_range2_header_label_2.setWordWrap(True)
-        self.lh_range2_header_label_3 = QLabel(self.quarter_note_weight)
-        self.lh_range2_header_label_3.setObjectName(u"lh_range2_header_label_3")
-        self.lh_range2_header_label_3.setGeometry(QRect(60, 10, 61, 26))
-        self.lh_range2_header_label_3.setFont(font)
-        self.lh_range2_header_label_3.setStyleSheet(u"QLabel {\n"
-"	color:rgb(137, 137, 206)\n"
-"	\n"
-"}")
-        self.horizontalSlider = QSlider(self.quarter_note_weight)
-        self.horizontalSlider.setObjectName(u"horizontalSlider")
-        self.horizontalSlider.setGeometry(QRect(40, 40, 211, 16))
-        self.horizontalSlider.setOrientation(Qt.Horizontal)
-        self.half_weight_widget = QWidget(self.configure)
-        self.half_weight_widget.setObjectName(u"half_weight_widget")
-        self.half_weight_widget.setGeometry(QRect(570, 120, 251, 61))
-        self.half_weight_label = QLabel(self.half_weight_widget)
-        self.half_weight_label.setObjectName(u"half_weight_label")
-        self.half_weight_label.setGeometry(QRect(0, 0, 40, 51))
-        self.half_weight_label.setFont(font)
-        self.half_weight_label.setStyleSheet(u"QLabel {\n"
-"	color:rgb(137, 137, 206)\n"
-"	\n"
-"}")
-        self.half_weight_label.setWordWrap(True)
-        self.half_weight_value = QLabel(self.half_weight_widget)
-        self.half_weight_value.setObjectName(u"half_weight_value")
-        self.half_weight_value.setGeometry(QRect(60, 10, 61, 22))
-        self.half_weight_value.setFont(font)
-        self.half_weight_value.setStyleSheet(u"QLabel {\n"
-"	color:rgb(137, 137, 206)\n"
-"	\n"
-"}")
-        self.half_weight_slider = QSlider(self.half_weight_widget)
-        self.half_weight_slider.setObjectName(u"half_weight_slider")
-        self.half_weight_slider.setGeometry(QRect(40, 40, 211, 16))
-        self.half_weight_slider.setOrientation(Qt.Horizontal)
         self.verticalLayoutWidget = QWidget(self.configure)
         self.verticalLayoutWidget.setObjectName(u"verticalLayoutWidget")
         self.verticalLayoutWidget.setGeometry(QRect(270, 20, 101, 61))
@@ -723,6 +683,168 @@ class Ui_MainWindow(object):
 "	color:rgb(137, 137, 206);\n"
 "	border: 0px;\n"
 "}")
+        self.weights_widget = QWidget(self.configure)
+        self.weights_widget.setObjectName(u"weights_widget")
+        self.weights_widget.setGeometry(QRect(670, 270, 621, 521))
+        self.weights_widget.setStyleSheet(u"QWidget {\n"
+"	background-color: rgb(0, 18, 23);\n"
+"}")
+        self.weight_profile = QComboBox(self.weights_widget)
+        self.weight_profile.addItem("")
+        self.weight_profile.addItem("")
+        self.weight_profile.addItem("")
+        self.weight_profile.addItem("")
+        self.weight_profile.setObjectName(u"weight_profile")
+        self.weight_profile.setGeometry(QRect(140, 20, 100, 23))
+        self.weight_profile.setStyleSheet(u"QComboBox {\n"
+"\n"
+"	border: 1px solid rgb(16, 24, 24);\n"
+"	border-radius: 4px;\n"
+"	background-color: rgb(16, 24, 24);\n"
+"	color: rgb(137, 137, 206);\n"
+"\n"
+"}\n"
+"\n"
+"QComboBox:hover {\n"
+"	background-color: rgb(24, 40, 40);\n"
+"}\n"
+"\n"
+"QComboBox:focus {\n"
+"	border: rgb(85, 170, 255);\n"
+"}\n"
+"")
+        self.quarter_weight_value = QLabel(self.weights_widget)
+        self.quarter_weight_value.setObjectName(u"quarter_weight_value")
+        self.quarter_weight_value.setGeometry(QRect(110, 198, 61, 26))
+        self.quarter_weight_value.setFont(font)
+        self.quarter_weight_value.setStyleSheet(u"QLabel {\n"
+"	color:rgb(137, 137, 206)\n"
+"	\n"
+"}")
+        self.half_weight_slider = QSlider(self.weights_widget)
+        self.half_weight_slider.setObjectName(u"half_weight_slider")
+        self.half_weight_slider.setGeometry(QRect(90, 168, 211, 16))
+        self.half_weight_slider.setOrientation(Qt.Horizontal)
+        self.quarter_weight_image = QLabel(self.weights_widget)
+        self.quarter_weight_image.setObjectName(u"quarter_weight_image")
+        self.quarter_weight_image.setGeometry(QRect(50, 188, 40, 51))
+        self.quarter_weight_image.setFont(font)
+        self.quarter_weight_image.setStyleSheet(u"QLabel {\n"
+"	color:rgb(137, 137, 206)\n"
+"	\n"
+"}")
+        self.quarter_weight_image.setPixmap(QPixmap(u"data/images/quarter.png"))
+        self.quarter_weight_image.setScaledContents(True)
+        self.quarter_weight_image.setWordWrap(True)
+        self.quarter_weight_slider = QSlider(self.weights_widget)
+        self.quarter_weight_slider.setObjectName(u"quarter_weight_slider")
+        self.quarter_weight_slider.setGeometry(QRect(90, 228, 211, 16))
+        self.quarter_weight_slider.setOrientation(Qt.Horizontal)
+        self.half_weight_value = QLabel(self.weights_widget)
+        self.half_weight_value.setObjectName(u"half_weight_value")
+        self.half_weight_value.setGeometry(QRect(110, 138, 61, 22))
+        self.half_weight_value.setFont(font)
+        self.half_weight_value.setStyleSheet(u"QLabel {\n"
+"	color:rgb(137, 137, 206)\n"
+"	\n"
+"}")
+        self.half_weight_image = QLabel(self.weights_widget)
+        self.half_weight_image.setObjectName(u"half_weight_image")
+        self.half_weight_image.setGeometry(QRect(50, 128, 40, 51))
+        self.half_weight_image.setFont(font)
+        self.half_weight_image.setStyleSheet(u"QLabel {\n"
+"	color:rgb(137, 137, 206)\n"
+"	\n"
+"}")
+        self.half_weight_image.setPixmap(QPixmap(u"data/images/half.png"))
+        self.half_weight_image.setScaledContents(True)
+        self.half_weight_image.setWordWrap(True)
+        self.roll_weights_label = QLabel(self.weights_widget)
+        self.roll_weights_label.setObjectName(u"roll_weights_label")
+        self.roll_weights_label.setGeometry(QRect(30, 18, 101, 30))
+        sizePolicy2.setHeightForWidth(self.roll_weights_label.sizePolicy().hasHeightForWidth())
+        self.roll_weights_label.setSizePolicy(sizePolicy2)
+        self.roll_weights_label.setMinimumSize(QSize(0, 0))
+        self.roll_weights_label.setMaximumSize(QSize(16777215, 16777215))
+        self.roll_weights_label.setFont(font)
+        self.roll_weights_label.setStyleSheet(u"color: rgb(137, 137, 206);")
+        self.roll_weights_label.setAlignment(Qt.AlignRight|Qt.AlignTop|Qt.AlignTrailing)
+        self.roll_weights_label.setWordWrap(True)
+        self.roll_weights_label.setMargin(6)
+        self.eighth_weight_slider = QSlider(self.weights_widget)
+        self.eighth_weight_slider.setObjectName(u"eighth_weight_slider")
+        self.eighth_weight_slider.setGeometry(QRect(90, 290, 211, 16))
+        self.eighth_weight_slider.setOrientation(Qt.Horizontal)
+        self.eighth_weight_value = QLabel(self.weights_widget)
+        self.eighth_weight_value.setObjectName(u"eighth_weight_value")
+        self.eighth_weight_value.setGeometry(QRect(110, 260, 61, 26))
+        self.eighth_weight_value.setFont(font)
+        self.eighth_weight_value.setStyleSheet(u"QLabel {\n"
+"	color:rgb(137, 137, 206)\n"
+"	\n"
+"}")
+        self.eighth_weight_image = QLabel(self.weights_widget)
+        self.eighth_weight_image.setObjectName(u"eighth_weight_image")
+        self.eighth_weight_image.setGeometry(QRect(50, 250, 40, 51))
+        self.eighth_weight_image.setFont(font)
+        self.eighth_weight_image.setStyleSheet(u"QLabel {\n"
+"	color:rgb(137, 137, 206)\n"
+"	\n"
+"}")
+        self.eighth_weight_image.setPixmap(QPixmap(u"data/images/eighth.png"))
+        self.eighth_weight_image.setScaledContents(True)
+        self.eighth_weight_image.setWordWrap(True)
+        self.whole_weight_slider = QSlider(self.weights_widget)
+        self.whole_weight_slider.setObjectName(u"whole_weight_slider")
+        self.whole_weight_slider.setGeometry(QRect(90, 110, 211, 16))
+        self.whole_weight_slider.setOrientation(Qt.Horizontal)
+        self.whole_weight_image = QLabel(self.weights_widget)
+        self.whole_weight_image.setObjectName(u"whole_weight_image")
+        self.whole_weight_image.setGeometry(QRect(60, 90, 21, 21))
+        self.whole_weight_image.setFont(font)
+        self.whole_weight_image.setStyleSheet(u"QLabel {\n"
+"	color:rgb(137, 137, 206)\n"
+"	\n"
+"}")
+        self.whole_weight_image.setPixmap(QPixmap(u"data/images/whole.png"))
+        self.whole_weight_image.setScaledContents(True)
+        self.whole_weight_image.setWordWrap(True)
+        self.whole_weight_value = QLabel(self.weights_widget)
+        self.whole_weight_value.setObjectName(u"whole_weight_value")
+        self.whole_weight_value.setGeometry(QRect(110, 80, 61, 22))
+        self.whole_weight_value.setFont(font)
+        self.whole_weight_value.setStyleSheet(u"QLabel {\n"
+"	color:rgb(137, 137, 206)\n"
+"	\n"
+"}")
+        self.sixteenth_weight_image = QLabel(self.weights_widget)
+        self.sixteenth_weight_image.setObjectName(u"sixteenth_weight_image")
+        self.sixteenth_weight_image.setGeometry(QRect(29, 310, 61, 51))
+        self.sixteenth_weight_image.setFont(font)
+        self.sixteenth_weight_image.setStyleSheet(u"QLabel {\n"
+"	color:rgb(137, 137, 206)\n"
+"	\n"
+"}")
+        self.sixteenth_weight_image.setPixmap(QPixmap(u"data/images/sixteenth.png"))
+        self.sixteenth_weight_image.setScaledContents(True)
+        self.sixteenth_weight_image.setWordWrap(True)
+        self.sixteenth_weight_value = QLabel(self.weights_widget)
+        self.sixteenth_weight_value.setObjectName(u"sixteenth_weight_value")
+        self.sixteenth_weight_value.setGeometry(QRect(110, 320, 61, 26))
+        self.sixteenth_weight_value.setFont(font)
+        self.sixteenth_weight_value.setStyleSheet(u"QLabel {\n"
+"	color:rgb(137, 137, 206)\n"
+"	\n"
+"}")
+        self.sixteenth_weight_slider = QSlider(self.weights_widget)
+        self.sixteenth_weight_slider.setObjectName(u"sixteenth_weight_slider")
+        self.sixteenth_weight_slider.setGeometry(QRect(90, 350, 211, 16))
+        self.sixteenth_weight_slider.setOrientation(Qt.Horizontal)
+        self.dialog_anchor = QWidget(self.configure)
+        self.dialog_anchor.setObjectName(u"dialog_anchor")
+        self.dialog_anchor.setEnabled(True)
+        self.dialog_anchor.setGeometry(QRect(430, 70, 61, 41))
+        self.dialog_anchor.raise_()
         self.keyboard_cat.raise_()
         self.verticalLayoutWidget_3.raise_()
         self.lh_range_label.raise_()
@@ -743,7 +865,6 @@ class Ui_MainWindow(object):
         self.length_label_3.raise_()
         self.length_label_4.raise_()
         self.quarter_note_weight.raise_()
-        self.half_weight_widget.raise_()
         self.verticalLayoutWidget.raise_()
         self.layoutWidget.raise_()
         self.time_sig_label.raise_()
@@ -754,6 +875,7 @@ class Ui_MainWindow(object):
         self.keysig_acc.raise_()
         self.keysig_scale.raise_()
         self.configuration_name.raise_()
+        self.weights_widget.raise_()
         self.top_bar = QFrame(self.centralwidget)
         self.top_bar.setObjectName(u"top_bar")
         self.top_bar.setGeometry(QRect(0, 0, 1600, 80))
@@ -762,16 +884,9 @@ class Ui_MainWindow(object):
 "}")
         self.top_bar.setFrameShape(QFrame.StyledPanel)
         self.top_bar.setFrameShadow(QFrame.Raised)
-        self.corner_logo = QPushButton(self.top_bar)
-        self.corner_logo.setObjectName(u"corner_logo")
-        self.corner_logo.setGeometry(QRect(0, 0, 80, 80))
-        icon = QIcon()
-        icon.addFile(u"data/images/avante-note.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.corner_logo.setIcon(icon)
-        self.corner_logo.setIconSize(QSize(100, 100))
         self.horizontalLayoutWidget_5 = QWidget(self.top_bar)
         self.horizontalLayoutWidget_5.setObjectName(u"horizontalLayoutWidget_5")
-        self.horizontalLayoutWidget_5.setGeometry(QRect(140, 0, 481, 80))
+        self.horizontalLayoutWidget_5.setGeometry(QRect(190, 0, 481, 82))
         self.nav = QHBoxLayout(self.horizontalLayoutWidget_5)
         self.nav.setSpacing(2)
         self.nav.setObjectName(u"nav")
@@ -828,7 +943,6 @@ class Ui_MainWindow(object):
 "QPushButton:hover {\n"
 "	color: rgb(137, 137, 206);\n"
 "	background-color:  rgb(18, 30, 30);\n"
-"	border: 2px solid rgb(36, 36, 54);\n"
 "}\n"
 "\n"
 "\n"
@@ -843,6 +957,10 @@ class Ui_MainWindow(object):
 
         self.nav.addWidget(self.nav_write)
 
+        self.label = QLabel(self.top_bar)
+        self.label.setObjectName(u"label")
+        self.label.setGeometry(QRect(0, 0, 80, 80))
+        self.label.setPixmap(QPixmap(u"data/images/avante-note.png"))
         self.write = QFrame(self.centralwidget)
         self.write.setObjectName(u"write")
         self.write.setGeometry(QRect(0, 80, 1600, 820))
@@ -1044,16 +1162,12 @@ class Ui_MainWindow(object):
         self.dash_2.setText(QCoreApplication.translate("MainWindow", u"-", None))
         self.sharp_ranges.setText(QCoreApplication.translate("MainWindow", u"\u266f", None))
         self.flat_ranges.setText(QCoreApplication.translate("MainWindow", u"\u266d", None))
-        self.ranges_label.setText(QCoreApplication.translate("MainWindow", u"Ranges", None))
+        self.ranges_label.setText(QCoreApplication.translate("MainWindow", u"Ranges:", None))
         self.lh_span.setText(QCoreApplication.translate("MainWindow", u"steps", None))
         self.rh_span.setText(QCoreApplication.translate("MainWindow", u"steps", None))
         self.length_label_3.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Span:</p></body></html>", None))
         self.length_label_4.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Span:</p></body></html>", None))
         self.keyboard_cat_label_2.setText("")
-        self.lh_range2_header_label_2.setText(QCoreApplication.translate("MainWindow", u"Quarter Icon", None))
-        self.lh_range2_header_label_3.setText(QCoreApplication.translate("MainWindow", u"1-100", None))
-        self.half_weight_label.setText(QCoreApplication.translate("MainWindow", u"Half Icon", None))
-        self.half_weight_value.setText(QCoreApplication.translate("MainWindow", u"1-100", None))
         self.save.setText(QCoreApplication.translate("MainWindow", u"Save", None))
         self.load.setText(QCoreApplication.translate("MainWindow", u"Load", None))
         self.timesig_num.setInputMask(QCoreApplication.translate("MainWindow", u"00", None))
@@ -1086,9 +1200,25 @@ class Ui_MainWindow(object):
         self.keysig_scale.setItemText(3, QCoreApplication.translate("MainWindow", u"melodic", None))
 
         self.configuration_name.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Unnamed Configuration", None))
-        self.corner_logo.setText("")
+        self.weight_profile.setItemText(0, QCoreApplication.translate("MainWindow", u"Standard", None))
+        self.weight_profile.setItemText(1, QCoreApplication.translate("MainWindow", u"Fast", None))
+        self.weight_profile.setItemText(2, QCoreApplication.translate("MainWindow", u"Slow", None))
+        self.weight_profile.setItemText(3, QCoreApplication.translate("MainWindow", u"Custom", None))
+
+        self.quarter_weight_value.setText(QCoreApplication.translate("MainWindow", u"1-100", None))
+        self.quarter_weight_image.setText("")
+        self.half_weight_value.setText(QCoreApplication.translate("MainWindow", u"1-100", None))
+        self.half_weight_image.setText("")
+        self.roll_weights_label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Roll Weights:</p></body></html>", None))
+        self.eighth_weight_value.setText(QCoreApplication.translate("MainWindow", u"1-100", None))
+        self.eighth_weight_image.setText("")
+        self.whole_weight_image.setText("")
+        self.whole_weight_value.setText(QCoreApplication.translate("MainWindow", u"1-100", None))
+        self.sixteenth_weight_image.setText("")
+        self.sixteenth_weight_value.setText(QCoreApplication.translate("MainWindow", u"1-100", None))
         self.nav_configure.setText(QCoreApplication.translate("MainWindow", u"Configure", None))
         self.nav_write.setText(QCoreApplication.translate("MainWindow", u"Write", None))
+        self.label.setText("")
         self.pdf.setText(QCoreApplication.translate("MainWindow", u".pdf", None))
         self.midi.setText(QCoreApplication.translate("MainWindow", u".midi", None))
         self.compose.setText(QCoreApplication.translate("MainWindow", u"Compose", None))
